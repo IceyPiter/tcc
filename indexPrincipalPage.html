@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Início</title>
+    <title>Voleibol</title>
     <script src="https://unpkg.com/feather-icons"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="stylePrincipalPage.css"></link>
 </head>
 <body>
-      <nav class="navbar navbar-expand-lg navbar-light m-2" style="background-color: #374259; border-color:#374259;">
+      <nav class="navbar navbar-expand-lg navbar-light p-3">
         <div class="container-fluid">
           <a class="navbar-brand" href="#"><img class="d-inline-block" src="assets/assetsPrincipalPage/logo4.png" width="60" height="60" alt=""></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,7 +52,7 @@
           </div>
         </div>
       </nav>
-      <div class="d-flex bg-dark">
+      <div id="carousel-1" class="d-flex">
         <div id="carouselExampleControls" class="carousel slide w-50 ms-5 mt-3 mb-3" data-bs-ride="carousel">
           <div class="carousel-inner w-100">
             <div class="carousel-item active w-100">
@@ -92,18 +92,64 @@
             </div>
         </div>
       </div>
-      <div class="container-fluid py-5 bg-dark">
-        <div class="text-white">
-            
-            <div class="m-5 d-flex">
-              <div class="me-3""><h5>Contatos: </h5></div>
-              <div class="me-2" ><i data-feather="github"></i> GitHub</div>
-              <div class="me-2"><i data-feather="youtube"></i> Youtube</div>
-              <div class="me-2"><i data-feather="instagram"></i> Instagram</div>
-            </div>
-
+      <div class="justify-content-center mt-5 mb-5">
+        <h2 class="iniNoticias text-center text-white fw-light">Algumas Noticias</h2>
+      </div>
+      <div class="d-flex justify-content-between mt-3 mb-3">
+        <div class="noticia-item col-lg-3 ms-5">
+          <div class="position-relative">
+              <img src="assets/assetsPrincipalPage/noticia1.jpg" class="img-fluid">
+          </div>
+          <div class="p-2 mt-2">
+              <div class="d-flex justify-content-between mb-3">
+              </div>
+              <div class="d-flex mb-3">
+                  <a id="text-link" class="ms-2" href="https://cbv.com.br/noticia/29565/circuito-mundial-de-volei-de-praia:-duda-e-taina-querem-medalhas-na-etapa-elite-do-canada-como-presentes-de-aniversario">Melhor Presente</a>
+              </div>
+              <p class="text-white mb-4 ms-2">Circuito Mundial de Vôlei de Praia: Duda e Tainá querem medalhas na etapa Elite do Canadá como presentes de aniversário.</p>
+          </div>
         </div>
-    </div>
+        <div class="noticia-item col-lg-3">
+          <div class="position-relative">
+              <img src="assets/assetsPrincipalPage/noticia2.jpg" class="img-fluid">
+          </div>
+          <div class="p-2 mt-2">
+              <div class="d-flex justify-content-between mb-3">
+              </div>
+              <div class="d-flex mb-3">
+                  <a id="text-link" class="ms-2" href="https://cbv.com.br/noticia/29563/lista-de-atletas-convocados-para-copa-pan-americana-2023--">Convocação</a>
+              </div>
+              <p class="text-white mb-4 ms-2">Lista de atletas convocados para Copa Pan-Americana.</p>
+          </div>
+        </div>
+        <div class="noticia-item col-lg-3 me-5">
+          <div class="position-relative">
+              <img src="assets/assetsPrincipalPage/noticia3.jpg" class="img-fluid">
+          </div>
+          <div class="p-2 mt-2">
+              <div class="d-flex justify-content-between mb-3">
+              </div>
+              <div class="d-flex mb-3">
+                  <a id="text-link" class="ms-2" href="https://cbv.com.br/noticia/29528/selecao-feminina-vence-tailandia-no-encerramento-da-fase-classificatoria-da-liga-das-nacoes-2023">Partiu Fase Final</a>
+              </div>
+              <p class="text-white mb-4 ms-2">Seleção feminina vence Tailândia no encerramento da fase classificarória da Liga das Nações 2023.</p>
+          </div>
+        </div>
+      </div>  
+
+      <footer class="container-fluid bg-dark">
+        <div class="text-white fw-light">
+            <div class="text-center">
+              <div class="text-center d-flex justify-content-center">
+                <div class="me-3 mt-2"><h5 style="font-size: larger;">Contatos: </h5></div>
+                <div class="me-3 mt-2" ><i data-feather="github"></i> GitHub</div>
+                <div class="me-3 mt-2"><i data-feather="youtube"></i> Youtube</div>
+                <div class="me-3 mt-2"><i data-feather="instagram"></i> Instagram</div>
+              </div>
+              <h5 style="font-size:13px; font-style: oblique; font-weight: lighter; margin-top: 10px;">Developed By Piter</h5>
+            </div>
+        </div>
+      </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 <script>feather.replace()</script>
 </body>
