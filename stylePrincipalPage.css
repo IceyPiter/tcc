@@ -60,6 +60,10 @@ a{
 .linha{
     background-color: rgb(224, 88, 9);
 }
+.linha form{    
+    width: 400px;
+    justify-content: right;
+}
 .img-navbar{
     display: flex;
     margin-top: 10px;
@@ -67,4 +71,8 @@ a{
     margin-bottom: 10px;
     width: 100px;
     height: 100px;
+}
+
+#search {
+
 }
