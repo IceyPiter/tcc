@@ -11,13 +11,17 @@
     <link rel="stylesheet" href="stylePrincipalPage.css"></link>
 </head>
 <body>
-  <div class="d-flex">  
+  <div class="barra container-fluid d-flex">  
     <img class="img-navbar d-inline-block" src="assets/assetsPrincipalPage/Volleyball-logo2.png" width="60" height="60" alt="">
-    <h1 class="m-2 mt-5 text-white justify-content-center fw-light">WebVolei</h1>
+    <h3 class="text-white fw-light ms-3">WebVolei</h3>
+    <div class="login container-fluid">
+      <a class="text-white fw-light me-3" href="#">Login</a>
+      <a class="text-white fw-light" href="#">Registrar-se</a>
+    </div>
   </div>
+  
       <nav class="navbar navbar-expand-lg navbar-light p-1">
-        <div class="container-fluid">
-          
+        <div class="barra1 container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -27,7 +31,7 @@
                 <a class="nav-link text-white" href="#">História</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle text-white me-1" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Fundamentos
                 </a>
                 <ul class="dropdown-menu" style="background-color: #192a50d7;" aria-labelledby="navbarDropdown">
@@ -45,26 +49,26 @@
                 <a class="nav-link text-white" href="#">Formações</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">Brasil no Vôlei</a>
+                <a class="nav-link text-white" style="width: 120px;" href="#">Brasil no Vôlei</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white" href="#">Regras</a>
               </li>
-              <li class="nav-item" style="margin-right: 635px;">
+              <li class="nav-item">
                 <a class="nav-link text-white" href="#">Referências</a>
               </li>
-              <form id="search" class="d-flex container-fluid">
-                <input class="form-control" type="search" placeholder="Pesquise aqui" aria-label="Search">
-                <button type="button" class="btn btn-outline-light"><i data-feather="search"></i></button>
-              </form> 
+              <div id="form" class="container-xxl justify-content-end">
+                <form class="form-pesquisa d-flex">
+                  <input class="form-control" type="search" placeholder="Pesquise aqui" aria-label="Search">
+                  <button type="button" class="btn btn-outline-light" id="search"><i data-feather="search"></i></button>
+                </form>
+             </div>
             </ul>
-            
-            
           </div>
         </div>
       </nav>
       <div id="carousel-1" class="d-flex">
-        <div id="carouselExampleControls" class="carousel slide w-50 ms-5 mt-5 mb-3" data-bs-ride="carousel">
+        <div id="carouselExampleControls" class="carousel slide w-50" data-bs-ride="carousel">
           <div class="carousel-inner w-100">
             <div class="carousel-item active w-100">
               <img src="assets/assetsPrincipalPage/capa1.png" class="d-block w-100" alt="...">
