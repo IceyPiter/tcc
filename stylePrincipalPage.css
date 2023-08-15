@@ -23,6 +23,11 @@ footer{
 
 #carousel-1{
     background-color: var(--corSec);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
 }
 
 .iniNoticias{
@@ -40,11 +45,6 @@ footer{
     border:10px solid var(--corSec);
 }
 
-#carousel-1{
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
-}
-
 footer{
     border-top: 1px solid white;
 }
@@ -59,6 +59,7 @@ a{
 }
 .linha{
     background-color: rgb(224, 88, 9);
+    padding: 0px 0px 0px 0px;
 }
 .linha form{    
     width: 400px;
@@ -73,6 +74,40 @@ a{
     height: 100px;
 }
 
-#search {
+.login{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: 18px;
+}
 
+.barra{
+    display: flex;
+    align-items: center;
+    
+}
+
+.carousel-inner{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.barra1{
+    padding: 0px 0px 0px 0px;
+}
+
+#search{
+    padding: 0px 0px 0px 0px;
+}
+
+#form {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin: 0;
+}
+
+.form-pesquisa button{
+    margin-left: 5px;
 }
