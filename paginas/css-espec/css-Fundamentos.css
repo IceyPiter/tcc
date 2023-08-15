@@ -1,0 +1,17 @@
+.saque{
+    border-top: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-saque1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+}
+
+.text1-saque{
+    margin-left: 10px;
+}
