@@ -6,6 +6,11 @@
     --corSec: #263e7460;
 }
 
+.rede{
+    background:url(assets/teste.png);
+    background-color:rgba(255, 255, 255, 0.788);
+}
+
 body{
     background-color: var(--corPrin);
 }
@@ -26,8 +31,6 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
 }
 
 .iniNoticias{
