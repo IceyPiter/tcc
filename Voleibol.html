@@ -8,7 +8,7 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="icon" href="assets/Volleyball-logo.png">
-    <link rel="stylesheet" href="stylePrincipalPage.css"></link>
+    <link rel="stylesheet" href="stylePrincipalPage.css">
 </head>
 <body>
   <div class="barra container-fluid d-flex">  
@@ -19,6 +19,7 @@
       <a class="text-white fw-light" href="#">Registrar-se</a>
     </div>
   </div>
+  
       <nav class="navbar navbar-expand-lg navbar-light p-0">
         <div class="barra1 container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,20 +42,22 @@
                   <li><a class="dropdown-item text-white" href="paginas/Fundamentos.html#Bloqueio">Bloqueio</a></li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#">Funções</a>
+              <li class="nav-item ">
+                <a class="nav-link text-white" href="#"><a class="nav-link2" onmouseenter="color()" onmouseout="color2()" id="texto-teste" href="#">Funções</a></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">Formações</a>
+                <div class="text-white">
+                  <a class="nav-link text-white" href="#"><a class="nav-link2" onmouseenter="color()" onmouseout="color2()" id="texto-teste" href="#">Formações</a></a>
+                </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" style="width: 120px;" href="#">Brasil no Vôlei</a>
+                <a class="nav-link text-white" href="#" style="width: 120px;"><a class="nav-link2" onmouseenter="color()" onmouseout="color2()" id="texto-teste" href="#">Brasil no Vôlei</a></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">Regras</a>
+                <a class="nav-link text-white" href="#"><a class="nav-link2" onmouseenter="color()" onmouseout="color2()" id="texto-teste" href="#">Regras</a></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">Referências</a>
+                <a class="nav-link text-white" href="#"><a class="nav-link2" onmouseenter="color()" onmouseout="color2()" id="texto-teste" href="#">Referências</a></a>
               </li>
               <div id="form" class="container-xxl justify-content-end">
                 <form class="form-pesquisa d-flex">
@@ -66,125 +69,141 @@
           </div>
         </div>
       </nav>
-      <div class="rede">
-        <div id="carousel-1" class="d-flex">
-          <div id="carouselExampleControls" class="carousel slide w-50" data-bs-ride="carousel">
-            <div class="carousel-inner w-100">
-              <div class="carousel-item active w-100">
-                <img src="assets/capa1.png" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="assets/capa3.png" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="assets/capa2.png" class="d-block w-100" alt="...">
-              </div>
-            </div>
+      <div id="carousel-1" class="d-flex">
+        <div id="carouselExampleControls" class="carousel slide ms-3" style="width:1000px;"  data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
           </div>
-          <div class="container-xxl py-4 w-25 ms-5">
-              <div class="textos-principalPage text-white text-lg-start">
-                <div>
-                  <h1 class="text-start">Quem somos nós?</h1>
-                  <span class="fw-light">O objetivo da realização desse trabalho é colaborar com jogadores iniciantes.</span>
-                </div>
-                <div>
-                  <h1 class="text-start mt-3">Porquê disso?</h1>
-                  <span class="fw-light">Devido a ocorrência da pandêmia em 2020, muitos acabaram deixando de se exercitar, com isso queremos incentivar o publico em geral ajudando em seu desenvolvimento.</span>
-                  <span class="fw-light">O Brasil tem em sua história baixo nível de investimento em esporte, o quê ocasiona em falta de acompanhamento profissional para os interessados em praticar o esporte, resultando em uma tentativa de treinamento solo, assim, queremos ajudar-los devido a decadência</span>
-                </div>
-                <div>
-                  <h1 class="text-start mt-3">Só Lembrando!!!</h1>
-                  <span class="fw-light">Lembre-se que isso é somente um teste, então não leve a sério...</span>
-                </div>
+          <div class="carousel-inner container-fluid">
+            <div class="carousel-item active">
+              <img src="assets/noticia7.jpg" class="d-block w-100" data-bs-interval="500" height="623.36" alt="...">
+              <div class="carousel-caption d-none d-md-block" id="carousel-text">
+                <h5>Defendendo o título</h5>
+                <p>Convocados para defender o Brasil na Copa Pan-Americana, Thierry e Lukas Bergmann disputam o CBI sub-21 pelo Sesi-SP.</p>
               </div>
-          </div>
-        </div>
-        <div class="justify-content-center mt-5 mb-5">
-          <h2 class="iniNoticias text-center text-white fw-light">Notícias</h2>
-        </div>
-        <div class="noticia-1 d-flex justify-content-between mt-3 mb-3">
-          <div class="noticia-item col-lg-3 ms-5">
-            <div class="position-relative">
-                <img src="assets/noticia1.jpg" class="img-fluid">
             </div>
-            <div class="p-2 mt-2">
-                <div class="d-flex justify-content-between mb-3">
-                </div>
-                <div class="d-flex mb-3">
-                    <a id="text-link" class="ms-2" href="https://cbv.com.br/noticia/29565/circuito-mundial-de-volei-de-praia:-duda-e-taina-querem-medalhas-na-etapa-elite-do-canada-como-presentes-de-aniversario">Melhor Presente</a>
-                </div>
-                <p class="text-white mb-4 ms-2">Circuito Mundial de Vôlei de Praia: Duda e Tainá querem medalhas na etapa Elite do Canadá como presentes de aniversário.</p>
+            <div class="carousel-item">
+              <img src="assets/noticia8.jpg" class="d-block w-100" data-bs-interval="500" height="623.36" alt="...">
+              <div class="carousel-caption d-none d-md-block" id="carousel-text">
+                <h5>As mais jovens</h5>
+                <p>Aos 14 anos, gêmeas baianas são as caçulas da Copa Regional Nordeste 2, que reúne 28 duplas em Recife.</p>
+              </div>
             </div>
-          </div>
-          <div class="noticia-item col-lg-3">
-            <div class="position-relative">
-                <img src="assets/noticia2.jpg" class="img-fluid">
-            </div>
-            <div class="p-2 mt-2">
-                <div class="d-flex justify-content-between mb-3">
-                </div>
-                <div class="d-flex mb-3">
-                    <a id="text-link" class="ms-2" href="https://cbv.com.br/noticia/29563/lista-de-atletas-convocados-para-copa-pan-americana-2023--">Convocação</a>
-                </div>
-                <p class="text-white mb-4 ms-2">Lista de atletas convocados para Copa Pan-Americana.</p>
-            </div>
-          </div>
-          <div class="noticia-item col-lg-3 me-5">
-            <div class="position-relative">
-                <img src="assets/noticia3.jpg" class="img-fluid">
-            </div>
-            <div class="p-2 mt-2">
-                <div class="d-flex justify-content-between mb-3">
-                </div>
-                <div class="d-flex mb-3">
-                    <a id="text-link" class="ms-2" href="https://cbv.com.br/noticia/29528/selecao-feminina-vence-tailandia-no-encerramento-da-fase-classificatoria-da-liga-das-nacoes-2023">Partiu Fase Final</a>
-                </div>
-                <p class="text-white mb-4 ms-2">Seleção feminina vence Tailândia no encerramento da fase classificarória da Liga das Nações 2023.</p>
+            <div class="carousel-item">
+              <img src="assets/noticia9.jpg" class="d-block w-100" data-bs-interval="500" height="623.36" alt="...">
+              <div class="carousel-caption d-none d-md-block" id="carousel-text">
+                <h5>Segundo consecutivo</h5>
+                <p>Sesi-SP conquista o bicampeonato do CBI masculino sub-21.</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="noticia-2 d-flex justify-content-between mt-5">
-          <div class="noticia-item col-lg-3 ms-5 mb-2">
-            <div class="position-relative">
-                <img src="assets/noticia4.jpg" class="img-fluid">
+        <div class="container-xxl py-4 w-25 m-4">
+          <div class="textos-principalPage text-white text-lg-start">
+            <div>
+              <h1 class="text-start">Quem somos nós?</h1>
+              <span class="fw-light">O objetivo da realização desse trabalho é colaborar com jogadores iniciantes.</span>
             </div>
-            <div class="p-2 mt-2">
-                <div class="d-flex justify-content-between mb-3">
-                </div>
-                <div class="d-flex mb-3">
-                    <a id="text-link" class="ms-2" href="https://cbv.com.br/noticia/29565/circuito-mundial-de-volei-de-praia:-duda-e-taina-querem-medalhas-na-etapa-elite-do-canada-como-presentes-de-aniversario">De Volta</a>
-                </div>
-                <p class="text-white mb-4 ms-2">Com Leal no  grupo, seleção masculina encara a Polônia pelas quartas de final da Liga das Naçoẽs.</p>
+            <div>
+              <h1 class="text-start mt-3">Porquê disso?</h1>
+              <span class="fw-light">Devido a ocorrência da pandêmia em 2020, muitos acabaram deixando de se exercitar, com isso queremos incentivar o publico em geral ajudando em seu desenvolvimento.</span>
+              <span class="fw-light">O Brasil tem em sua história baixo nível de investimento em esporte, o quê ocasiona em falta de acompanhamento profissional para os interessados em praticar o esporte, resultando em uma tentativa de treinamento solo, assim, queremos ajudar-los devido a decadência</span>
             </div>
-          </div>
-          <div class="noticia-item col-lg-3 mb-2">
-            <div class="position-relative">
-                <img src="assets/noticia5.jpg" class="img-fluid">
-            </div>
-            <div class="p-2 mt-2">
-                <div class="d-flex justify-content-between mb-3">
-                </div>
-                <div class="d-flex mb-3">
-                    <a id="text-link" class="ms-2" href="https://cbv.com.br/noticia/29563/lista-de-atletas-convocados-para-copa-pan-americana-2023--">Estreia na quarta-feira</a>
-                </div>
-                <p class="text-white mb-4 ms-2">Seleção Masculina sub-19 disputa Campeonato Mundial na Argentina.</p>
+            <div>
+              <h1 class="text-start mt-3">Só Lembrando!!!</h1>
+              <span class="fw-light">Lembre-se que isso é somente um teste, então não leve a sério...</span>
             </div>
           </div>
-          <div class="noticia-item col-lg-3 me-5 mb-2">
-            <div class="position-relative">
-                <img src="assets/noticia6.jpg" class="img-fluid">
-            </div>
-            <div class="p-2 mt-2">
-                <div class="d-flex justify-content-between mb-3">
-                </div>
-                <div class="d-flex mb-3">
-                    <a id="text-link" class="ms-2" href="https://cbv.com.br/noticia/29528/selecao-feminina-vence-tailandia-no-encerramento-da-fase-classificatoria-da-liga-das-nacoes-2023">Só mais um passo.</a>
-                </div>
-                <p class="text-white mb-4 ms-2">Vôlei: Brasil vence Itália e vai à final do Mundial feminino.</p>
-            </div>
-          </div>
-        </div>   
+        </div>
       </div>
+      <div class="justify-content-center mt-5 mb-5">
+        <h2 class="iniNoticias text-center text-white fw-light">Notícias</h2>
+      </div>
+      <div class="noticia-1 d-flex justify-content-between mt-3 mb-3">
+        <div class="noticia-item col-lg-3 ms-5">
+          <div class="position-relative">
+              <img src="assets/noticia1.jpg" class="img-fluid">
+          </div>
+          <div class="p-2 mt-2">
+              <div class="d-flex justify-content-between mb-3">
+              </div>
+              <div class="d-flex mb-3">
+                  <a id="text-link" class="ms-2" href="https://cbv.com.br/noticia/29565/circuito-mundial-de-volei-de-praia:-duda-e-taina-querem-medalhas-na-etapa-elite-do-canada-como-presentes-de-aniversario">Melhor Presente</a>
+              </div>
+              <p class="text-white mb-4 ms-2">Circuito Mundial de Vôlei de Praia: Duda e Tainá querem medalhas na etapa Elite do Canadá como presentes de aniversário.</p>
+          </div>
+        </div>
+        <div class="noticia-item col-lg-3">
+          <div class="position-relative">
+              <img src="assets/noticia2.jpg" class="img-fluid">
+          </div>
+          <div class="p-2 mt-2">
+              <div class="d-flex justify-content-between mb-3">
+              </div>
+              <div class="d-flex mb-3">
+                  <a id="text-link" class="ms-2" href="https://cbv.com.br/noticia/29563/lista-de-atletas-convocados-para-copa-pan-americana-2023--">Convocação</a>
+              </div>
+              <p class="text-white mb-4 ms-2">Lista de atletas convocados para Copa Pan-Americana.</p>
+          </div>
+        </div>
+        <div class="noticia-item col-lg-3 me-5">
+          <div class="position-relative">
+              <img src="assets/noticia3.jpg" class="img-fluid">
+          </div>
+          <div class="p-2 mt-2">
+              <div class="d-flex justify-content-between mb-3">
+              </div>
+              <div class="d-flex mb-3">
+                  <a id="text-link" class="ms-2" href="https://cbv.com.br/noticia/29528/selecao-feminina-vence-tailandia-no-encerramento-da-fase-classificatoria-da-liga-das-nacoes-2023">Partiu Fase Final</a>
+              </div>
+              <p class="text-white mb-4 ms-2">Seleção feminina vence Tailândia no encerramento da fase classificarória da Liga das Nações 2023.</p>
+          </div>
+        </div>
+      </div>
+      <div class="noticia-2 d-flex justify-content-between mt-5 mb-5">
+        <div class="noticia-item col-lg-3 ms-5">
+          <div class="position-relative">
+              <img src="assets/noticia4.jpg" class="img-fluid">
+          </div>
+          <div class="p-2 mt-2">
+              <div class="d-flex justify-content-between mb-3">
+              </div>
+              <div class="d-flex mb-3">
+                  <a id="text-link" class="ms-2" href="https://cbv.com.br/noticia/29565/circuito-mundial-de-volei-de-praia:-duda-e-taina-querem-medalhas-na-etapa-elite-do-canada-como-presentes-de-aniversario">De Volta</a>
+              </div>
+              <p class="text-white mb-4 ms-2">Com Leal no  grupo, seleção masculina encara a Polônia pelas quartas de final da Liga das Naçoẽs.</p>
+          </div>
+        </div>
+        <div class="noticia-item col-lg-3">
+          <div class="position-relative">
+              <img src="assets/noticia5.jpg" class="img-fluid">
+          </div>
+          <div class="p-2 mt-2">
+              <div class="d-flex justify-content-between mb-3">
+              </div>
+              <div class="d-flex mb-3">
+                  <a id="text-link" class="ms-2" href="https://cbv.com.br/noticia/29563/lista-de-atletas-convocados-para-copa-pan-americana-2023--">Estreia na quarta-feira</a>
+              </div>
+              <p class="text-white mb-4 ms-2">Seleção Masculina sub-19 disputa Campeonato Mundial na Argentina.</p>
+          </div>
+        </div>
+        <div class="noticia-item col-lg-3 me-5">
+          <div class="position-relative">
+              <img src="assets/noticia6.jpg" class="img-fluid">
+          </div>
+          <div class="p-2 mt-2">
+              <div class="d-flex justify-content-between mb-3">
+              </div>
+              <div class="d-flex mb-3">
+                  <a id="text-link" class="ms-2" href="https://cbv.com.br/noticia/29528/selecao-feminina-vence-tailandia-no-encerramento-da-fase-classificatoria-da-liga-das-nacoes-2023">Só mais um passo.</a>
+              </div>
+              <p class="text-white mb-4 ms-2">Vôlei: Brasil vence Itália e vai à final do Mundial feminino.</p>
+          </div>
+        </div>
+      </div>   
+
       <footer class="container-fluid bg-dark">
         <div class="text-white fw-light">
             <div class="text-center">
@@ -201,4 +220,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 <script>feather.replace()</script>
 </body>
+<script src="script.js"></script>
 </html>

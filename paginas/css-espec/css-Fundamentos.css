@@ -15,11 +15,3 @@
 .text1-saque{
     margin-left: 10px;
 }
-
-.saque-back{
-    background-image: url(../assetsPages/rectangle_1.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 600px;
-    width: 1200px;
-}
