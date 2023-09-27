@@ -4,6 +4,7 @@
     --corPrin: #212529;
     --fontPrin: 'Quicksand', sans-serif;
     --corSec: #263e7460;
+    --navbar-color: #ffffff;
 }
 
 body{
@@ -117,6 +118,10 @@ a{
     background-color: #30333681;
 }
 
-.nav-link2{
-    top: 20px;
+#texto-teste {
+    text-decoration: none;
+}
+
+.nav-item2 {
+    margin-top: 20px;
 }
