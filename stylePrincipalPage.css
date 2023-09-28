@@ -26,8 +26,7 @@ footer{
 
 #carousel-1{
     background-color: var(--corPrin);
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
+    margin-bottom: 100px;
 }
 
 .iniNoticias{
@@ -153,4 +152,12 @@ a{
 
 #contato:hover{
     color: #96B6C5;
+}
+
+#carousel-border{
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-radius: 5%;
 }
