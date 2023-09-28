@@ -12,7 +12,7 @@
 </head>
 <body>
   <div class="barra container-fluid d-flex">  
-    <img class="img-navbar d-inline-block" src="assets/Volleyball-logo2.png" width="30" height="30" alt="">
+    <img class="img-navbar d-inline-block" src="assets/Volleyball-logo.png" alt="">
     <h3 class="text-white fw-light ms-3">WebVolei</h3>
     <div class="login container-fluid">
       <a class="text-white fw-light me-3" href="#">Login</a>
@@ -26,12 +26,12 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarScroll">
-            <ul class="linha container-fluid navbar-nav me-auto my-3 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 300px;">
-              <li class="nav-item">
-                <a class="textoH nav-link text-white" onmouseenter="color('textoH')" onmouseout="color2('textoH')" href="/paginas/Historia.html">História</a>
+            <ul class="linha container-fluid navbar-nav me-auto my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 300px;">
+              <li class="nav-item"> 
+                <a class="nav-item nav-link" id="texto-teste" href="/paginas/Historia.html">História</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="textoDropD nav-link dropdown-toggle text-white me-1" onmouseenter="color('textoDropD')" onmouseout="color2('textoDropD')" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-item nav-link dropdown-toggle me-1" id="texto-teste"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Fundamentos
                 </a>
                 <ul class="dropdown-menu" style="background-color: #192a50d7;" aria-labelledby="navbarDropdown">
@@ -43,19 +43,19 @@
                 </ul>
               </li>
               <li class="nav-item ">
-                <a class="nav-item2 nav-link text-white" href="#"><a class="nav-link2" onmouseenter="color('texto-teste1')" onmouseout="color2('texto-teste1')" id="texto-teste1" href="#">Funções</a></a>
+                <a class="nav-item nav-link" id="texto-teste" href="#">Funções</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-item2 nav-link" href="#"><a class="nav-link2" onmouseenter="color('texto-teste2')" onmouseout="color2('texto-teste2')" id="texto-teste2" href="#">Formações</a></a>
+                  <a class="nav-item nav-link" id="texto-teste" href="#">Formações</a>
               </li>
               <li class="nav-item">
-                <a class="nav-item2 nav-link text-white" href="#" style="width: 120px;"><a class="nav-link2" onmouseenter="color('texto-teste3')" onmouseout="color2('texto-teste3')" id="texto-teste3" href="#">Brasil no Vôlei</a></a>
+                <a class="nav-item nav-link" href="#" style="width: 120px;" id="texto-teste">Brasil no Vôlei</a>
               </li>
               <li class="nav-item">
-                <a class="nav-item2 nav-link text-white" href="#"><a class="nav-link2" onmouseenter="color('texto-teste4')" onmouseout="color2('texto-teste4')" id="texto-teste4" href="#">Regras</a></a>
+                <a class="nav-item nav-link" href="#" id="texto-teste">Regras</a>
               </li>
               <li class="nav-item">
-                <a class="nav-item2 nav-link text-white" href="#"><a class="nav-link2" onmouseenter="color('texto-teste5')" onmouseout="color2('texto-teste5')" id="texto-teste5" href="#">Referências</a></a>
+                <a class="nav-item nav-link" href="#" id="texto-teste">Referências</a>
               </li>
               <div id="form" class="container-xxl justify-content-end">
                 <!-- <form class="form-pesquisa d-flex">
@@ -67,6 +67,13 @@
           </div>
         </div>
       </nav>
+      <div class="div-who">
+        <div class="text-who text-center">
+          <h1 class="text-who2 text-center text-white">Quem somos nós?</h1>
+          <span class="text-center text-white">Eu sou <span class="span-who fw-bold">Pedro Moraes Michalski</span> e <span class="span-who fw-bold">Carla Christina De Oliveira P.</span>,</br>somos estudantes do 3º Ano de Informático do IFPR (Instituto Federal do Paraná - Campus Cascavel)</span>
+        </div>
+        
+      </div>
       <div id="carousel-1" class="d-flex">
         <div id="carouselExampleControls" class="carousel slide ms-3" style="width:1000px;"  data-bs-ride="carousel">
           <div class="carousel-indicators">
@@ -100,10 +107,6 @@
         </div>
         <div class="container-xxl py-4 w-25 m-4">
           <div class="textos-principalPage text-white text-lg-start">
-            <div>
-              <h1 class="text-start">Quem somos nós?</h1>
-              <span class="fw-light">O objetivo da realização desse trabalho é colaborar com jogadores iniciantes.</span>
-            </div>
             <div>
               <h1 class="text-start mt-3">Porquê disso?</h1>
               <span class="fw-light">Devido a ocorrência da pandêmia em 2020, muitos acabaram deixando de se exercitar, com isso queremos incentivar o publico em geral ajudando em seu desenvolvimento.</span>

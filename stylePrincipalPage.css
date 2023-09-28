@@ -53,23 +53,24 @@ a{
 }
 
 .nav-item{
-    margin: 7px;
+    margin: 4px;
 }
 .linha{
+    border-top: 1px solid white;
     background-color: rgb(224, 88, 9);
     padding: 0px 0px 0px 0px;
 }
-.linha form{    
+/* .linha form{    
     width: 400px;
     justify-content: right;
-}
+} */
 .img-navbar{
     display: flex;
     margin-top: 10px;
     margin-left: 40px;
     margin-bottom: 10px;
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
 }
 
 .login{
@@ -82,7 +83,6 @@ a{
 .barra{
     display: flex;
     align-items: center;
-    
 }
 
 .carousel-inner{
@@ -118,10 +118,26 @@ a{
     background-color: #30333681;
 }
 
-#texto-teste {
-    text-decoration: none;
+#texto-teste{
+    color: white;
+}
+#texto-teste:hover{
+    color: #96B6C5;
 }
 
-.nav-item2 {
-    margin-top: 20px;
+.div-who{
+    height: 44vw;
+    background-image: url(assets/who.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top: 1px solid white;
+}
+
+.text-who2{
+    padding:  150px 0px 0px 0px;
+}
+
+.span-who{
+    color:rgb(196, 127, 0);
+    font-style: bold;
 }
