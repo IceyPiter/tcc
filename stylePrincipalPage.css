@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 :root{
-    --corPrin: #212529;
+    --corPrin: #041820;
     --fontPrin: 'Quicksand', sans-serif;
     --corSec: #263e7460;
     --navbar-color: #ffffff;
@@ -13,6 +13,8 @@ body{
 
 footer{
     height: 70px;
+    border-top: 1px solid white;
+    background-color: #041820;
 }
 
 #text-link{
@@ -43,13 +45,10 @@ footer{
     border:10px solid var(--corSec);
 }
 
-footer{
-    border-top: 1px solid white;
-}
-
 a{
     text-decoration: none;
     color: white;
+
 }
 
 .nav-item{
@@ -126,7 +125,7 @@ a{
 }
 
 .div-who{
-    height: 44vw;
+    height: 46vw;
     background-image: url(assets/who.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -137,7 +136,21 @@ a{
     padding:  150px 0px 0px 0px;
 }
 
-.span-who{
-    color:rgb(196, 127, 0);
+#span-who{
+    color:rgb(255, 166, 0);
     font-style: bold;
+}
+
+.justify{
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    background-color: #041820;
+}
+
+.traco{
+    margin-top: 3px;
+}
+
+#contato:hover{
+    color: #96B6C5;
 }
