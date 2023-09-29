@@ -161,3 +161,7 @@ a{
     border-right: 1px solid white;
     border-radius: 5%;
 }
+
+#sla{
+    background-color: rgba(0, 0, 0, 0.541);
+}
