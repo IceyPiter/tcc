@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+:root{
+    --corPrin: #041820;
+    --fontPrin: 'Quicksand', sans-serif;
+    --corSec: #263e7460;
+    --navbar-color: #ffffff;
+}
+
+body{
+    background-color: var(--corPrin);
+}
+
+footer{
+    height: 70px;
+    border-top: 1px solid white;
+    background-color: #041820;
+}
+
+#text-link{
+    font-size: 20px;
+    font-style: bold;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-toggler-icon{
+    background-color: #949494a4;
+}
+
+.nav-item{
+    margin: 4px;
+}
+.linha{
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    background-color: #ff5733;
+    padding: 0px 0px 0px 0px;
+}
+
+.img-navbar{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-bottom: 10px;
+    width: 60px;
+    height: 60px;
+}
+
+.login{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: 18px;
+}
+
+.barra{
+    display: flex;
+    align-items: center;
+}
+
+.barra1{
+    padding: 0px 0px 0px 0px;
+}
+
+#spanOrange{
+    color:rgb(255, 166, 0);
+}
+
+#spanRed{
+    color: #952323;
+}
+
+#spanGray{
+    color: #ff6528;
+}
+
+#text-refs{
+    font-size: 18px;
+    display: flex;
+    color: white;
+    margin-bottom: 10%;
+    margin: 4%;
+    align-items: center;
+}
+
+@media (max-width: 890px) {
+    #text-refs {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 991px) {
+    .barra {
+        background-color: #ff5733;
+    }
+}
+
+.referencias-container {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    max-width: 1000px;
+    width: 100%;
+    text-align: justify; /* ou mova isto para .referencias, dependendo do seu requisito */
+}
+
+.referencias {
+    width: 100%;
+    color: white;
+    /* O estilo de justificação foi movido para .referencias-container */
+}
+
+.subtitle{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.meio{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+#texto-teste:hover{
+    color: #96B6C5;
+}
+
+#texto-teste{
+    color: white;
+}

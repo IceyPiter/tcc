@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curiosidades</title>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="icon" href="{% static 'img/Volleyball-logo.png' %}">
+  <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+  <link rel="stylesheet" href="{% static 'css/css-History.css' %}">
+  </link>
+</head>
+
+<body>
+  <div class="barra container-fluid d-flex">
+    <img class="img-navbar d-inline-block" src="{% static 'img/Volleyball-logo.png' %}" width="30" height="30" alt="">
+    <h3 class="text-white fw-light ms-3">WebVolei</h3>
+    <div class="login container-fluid" style="margin-right: 60px;">
+      <li class="nav-item dropdown d-flex align-items-center">
+        <a class="nav-item nav-link dropdown-toggle text-light" id="texto-teste"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          -- Usuário --
+        </a>
+        <ul id="elementsUser" class="dropdown-menu text-white fw-light text-light" style="background-color: #e98b10d7;" aria-labelledby="navbarDropdown">
+          {% if caso1 == False %}
+          <li><a id="Login" class="ms-2 text-light" href="{% url 'openLogin' %}">Login</a></li>
+          <li><a id="Registrar" class="ms-2 text-light" href="{% url 'openUser' %}">Registrar-se</a></li>
+          {% endif %}
+          {% if caso1 == True %}
+          <li><a id="Login" class="ms-2 text-light" href="">{{ user.get_username }}</a></li>
+          <li><a id="Registrar" class="ms-2 text-light" href="{% url 'openConf' %}">Configurações</a></li>
+          <li><a id="LogOut" class="ms-2 text-light" href="{% url 'deslogar' %}">LogOut</a></li>
+          {% endif %}
+        </ul>
+      </li>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-light p-0">
+    <div class="barra1 container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="linha container-fluid navbar-nav me-auto my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 300px;">
+          <li class="nav-item">
+            <a class="nav-item nav-link text-white" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link" id="texto-teste" href="{% url 'openHistory' %}">História</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-item nav-link dropdown-toggle me-1" id="texto-teste"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Fundamentos
+            </a>
+            <ul class="dropdown-menu" style="background-color: #192a50d7;" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 1 %}">Recepção</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 2 %}">Saque</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 3 %}">Levantamento</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 4 %}">Bloqueio</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 5 %}">Ataque</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link" href="{% url 'openRegras' %}" id="texto-teste">Regras</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link" href="{% url 'openCurious' %}" style="width: 120px;" id="texto-teste">Curiosidades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link" href="{% url 'openRefs' %}" id="texto-teste">Referências</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-item nav-link" id="texto-teste" style="width: 180px;" href="{% url 'openChat' %}">Chat da Comunidade</a>
+          </li>
+          <div id="form" class="container-xxl justify-content-end">
+         </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--Fim Barra de Navegação-->
+  <!-- Início do Brasil no Volei -->
+
+  <div class="container mt-5 mb-3">
+    <div class="text">
+      <div>
+        <p id="spanBlue" class="p text-center fw-bold wow bounceInDown" data-wow-delay="0.3s">CURIOSIDADES</p>
+
+        <p id="spanBlue" class="p text-center fw-bold wow slideInLeft" data-wow-delay="0.3s">O voleibol é a segunda modalidade esportiva mais praticada no
+          Brasil</p>
+
+        <div id="img-bola">
+          <img class="mb-1 wow slideInLeft" data-wow-delay="0.3s" src="{% static 'img/assetsPages/cur1.jpg' %}" style="width:40%;" alt="Imagem">
+        </div>
+        <a href="https://jogohoje.com/outros-esportes/serginho-escadinha/" id="text-players" class="p fw-bold wow slideInRight" data-wow-delay="0.5s">Fonte:
+          Estão abertas as inscrições para o Projeto Viva Vôlei de Angra dos Reis - A Voz da Cidade</a>
+        <p class="p text-center fw-light wow slideInRight" data-wow-delay="0.5s">A bola de voleibol pesa cerca de 260-280 gramas e tem uma circunferência de
+          65-67 centímetros.</p>
+
+        <div id="img-bola">
+          <img class="mb-1 wow slideInLeft" data-wow-delay="0.3s" src="{% static 'img/assetsPages/cur2.png' %}" style="width:40%;" alt="Imagem">
+        </div>
+        <a href="https://ge.globo.com/volei/noticia/2023/02/17/fofao-e-anunciada-como-tecnica-da-selecao-feminina-sub-17.ghtml"
+          id="text-players" class=" p fw-bold wow slideInRight" data-wow-delay="0.5s">Fonte: Calendário do Circuito Mundial de vôlei de praia 2021
+          (olimpiadatododia.com.br)</a>
+        <p class="p text-center fw-light wow slideInRight" data-wow-delay="0.5s">O voleibol de praia é uma versão popular do esporte, originada na Califórnia,
+          na década de 1920.</p>
+
+        <div id="img-bola">
+          <img class="mb-1 wow slideInLeft" data-wow-delay="0.3s" src="{% static 'img/assetsPages/cur3.png' %}" style="width:40%;" alt="Imagem">
+        </div>
+        <a href="https://terceirotempo.uol.com.br/que-fim-levou/bernard-rajzman-933" id="text-players"
+          class="p fw-bold wow slideInRight" data-wow-delay="0.5s">Fonte: Olimpíadas 1976 - Polônia x Japão (semifinal) - partidas de vôlei (em dvd)
+          (loja2.com.br)</a>
+        <p class="p text-center fw-light wow slideInRight" data-wow-delay="0.5s">- Vôlei de quadra também é conhecido como voleibol indoor</br>- O jogo
+          profissional mais longo da história foi entre Polônia e União Soviética na final dos Jogos Olímpicos de 1976 e
+          durou 4 horas e 36 minutos; </p>
+
+        <div id="img-bola">
+          <img class="mb-1 wow slideInLeft" data-wow-delay="0.3s" src="{% static 'img/assetsPages/cur4.png' %}" style="width:40%;" alt="Imagem">
+        </div>
+        <a href="https://esportes.r7.com/olimpiadas/idolo-do-volei-giba-anuncia-aposentadoria-23082021"
+          id="text-players" class="p fw-bold wow slideInRight" data-wow-delay="0.5s">Fonte: Brasil vence a China na estreia do vôlei sentado masculino |
+          paralimpíadas | ge (globo.com)</a>
+        <p class="p text-center fw-light wow slideInRight" data-wow-delay="0.5s">O vôlei sentado existe e é uma variação do voleibol projetada para atletas com
+          deficiências físicas. É um esporte Paralímpico.</p>
+
+        <div id="img-bola">
+          <img class="mb-1 wow slideInLeft" data-wow-delay="0.3s" src="{% static 'img/assetsPages/cur5.png' %}" style="width:40%;" alt="Imagem">
+        </div>
+        <a href="https://vivadigitalsa.com.br/jose-roberto-guimaraes-biografia-titulos-e-historia-no-volei/"
+          id="text-players" class="p fw-bold wow slideInRight" data-wow-delay="0.5s">Fonte: FIVB define grupos do Pré-Olímpico de vôlei feminino; veja os
+          adversários do Brasil - Lance!</a>
+        <p class="p text-center fw-light wow slideInRight" data-wow-delay="0.5s">A seleção feminina do Brasil é uma das mais fortes do mundo, com múltiplos
+          títulos em competições importantes.</p>
+
+        <div id="img-bola">
+          <img class="mb-1 wow slideInLeft" data-wow-delay="0.3s" src="{% static 'img/assetsPages/cur6.png' %}" style="width:40%;" alt="Imagem">
+        </div>
+        <a href="https://vivadigitalsa.com.br/jose-roberto-guimaraes-biografia-titulos-e-historia-no-volei/"
+          id="text-players" class="p fw-bold wow slideInRight" data-wow-delay="0.5s">Fonte: Como fazer Cortada no Voleibol: Cortada Perfeita | DEF
+          (dicaseducacaofisica.info)</a>
+        <p class="p text-center fw-light wow slideInRight" data-wow-delay="0.5s">Um jogador pode dar, em cada partida, de 60 a 80 saltos, podendo esse número
+          chegar a 100;</p>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center wow bounceInUp" data-wow-delay="0.3s">
+    <ul class="list-group">
+      <li class="list-group-item text-center py-2">----Lista de Medalhas: Brasil----</li>
+      <li class="list-group-item text-center py-2"><img id="img-medals" src="{% static 'img/assetsPages/medalha-de-ouro.png' %}" alt="ouro"> Ouro Masculino: 3 medalhas de ouro (Barcelona
+        1992, Atenas 2004 e Rio de Janeiro 2016).</li>
+      <li class="list-group-item text-center py-2"><img id="img-medals" src="{% static 'img/assetsPages/medalha-de-ouro.png' %}" alt="ouro"> Ouro Feminino: 2 medalhas de ouro (Pequim 2008
+        e
+        Londres 2012).</li>
+      <li class="list-group-item text-center py-2"><img id="img-medals" src="{% static 'img/assetsPages/medalha-de-prata.png' %}" alt="prata"> Prata Masculino: 2 medalhas de prata (Los
+        Angeles 1984 e Pequim 2008).</li>
+      <li class="list-group-item text-center py-2"><img id="img-medals" src="{% static 'img/assetsPages/medalha-de-prata.png' %}" alt="prata"> Prata Feminino: 2 medalhas de prata (Los
+        Angeles
+        1984 e Atlanta 1996).</li>
+      <li class="list-group-item text-center py-2"><img id="img-medals" src="{% static 'img/assetsPages/medalha-de-bronze.png' %}" alt="bronze"> Bronze Masculino: 2 medalhas de bronze
+        (Atlanta
+        1996 e Londres 2012).</li>
+      <li class="list-group-item text-center py-2"><img id="img-medals" src="{% static 'img/assetsPages/medalha-de-bronze.png' %}" alt="bronze"> Bronze Masculino: 2 medalhas de bronze
+        (Atlanta
+        1996 e Londres 2012).</li>
+    </ul>
+  </div>
+
+  <!-- Fim do Brasil no Volei -->
+
+  <footer class="container-fluid">
+    <div class="justify-content-center text-white fw-light d-flex">
+        <div class="text-center">
+          <div class="text-center d-flex justify-content-center">
+            <div class="me-3 mt-2"><a id="contato" href="https://github.com/IceyPiter"><i data-feather="github"></i> GitHub</a></div>
+            <div class="me-3 mt-2"><a id="contato" href="https://twitter.com/MoraesMichalski?t=QQjbt5rUnsjlaBzuRChZ4g&s=09"><i data-feather="twitter"></i> Twitter</a></div>
+            <div class="me-3 mt-2"><a id="contato" href="https://instagram.com/dpedromichalski?utm_source=qr&iqshid=MzNINGNkZWQ4Mg%3D%3D"><i data-feather="instagram"></i> Instagram</a></div>
+          </div>
+          <h5 style="font-size:13px; font-style: oblique; font-weight: lighter; margin-top: 10px;">Developed By Piter &#169 2023</h5>
+        </div>
+        <h3 class="traco fw-bold me-3">-</h3>
+        <div class="text-center">
+          <div class="text-center d-flex justify-content-center">
+            <div class="me-3 mt-2"><a id="contato" href="https://github.com/Linkadah"><i data-feather="github"></i> GitHub</a></div>
+            <div id="contato" class="me-3 mt-2"><a id="contato" href="https://www.twitch.tv/linkadah_?sr=a"><i data-feather="twitch"></i> Twitch</a></div>
+            <div class="me-3 mt-2"><a id="contato" href="https://instagram.com/_krlachristinacomh?igshid=MzRlODBiNWFlZA=="><i data-feather="instagram"></i> Instagram</a></div>
+          </div>
+          <h5 style="font-size:13px; font-style: oblique; font-weight: lighter; margin-top: 10px;">Developed By Carla &#169 2023</h5>
+        </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script>feather.replace()</script>
+  <script src="{% static 'js/script.js' %}"></script>
+  <script src="{% static 'js/wow.min.js' %}"></script><script>new WOW().init();</script>
+</body>
+</html>

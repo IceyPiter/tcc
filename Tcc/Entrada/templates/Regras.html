@@ -1,0 +1,223 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regras</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="icon" href="{% static 'img/Volleyball-logo.png' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/css-Regras.css' %}"></link>
+  </head>
+<body>
+    <!-- Início Header -->
+    <div class="barra container-fluid d-flex">
+        <img class="img-navbar d-inline-block" src="{% static 'img/Volleyball-logo.png' %}" width="30" height="30" alt="">
+        <h3 class="text-white fw-light ms-3">WebVolei</h3>
+        <div class="login container-fluid" style="margin-right: 60px;">
+            <li class="nav-item dropdown d-flex align-items-center">
+                <a class="nav-item nav-link dropdown-toggle text-white" id="texto-teste"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  -- Usuário --
+                </a>
+                <ul id="elementsUser" class="dropdown-menu text-white fw-light" style="background-color: #e98b10d7;" aria-labelledby="navbarDropdown">
+                    {% if caso1 == False %}
+                    <li><a id="Login" class="ms-2" href="{% url 'openLogin' %}">Login</a></li>
+                    <li><a id="Registrar" class="ms-2" href="{% url 'openUser' %}">Registrar-se</a></li>
+                    {% endif %}
+                    {% if caso1 == True %}
+                    <li><a id="Login" class="ms-2" href="">{{ user.get_username }}</a></li>
+                    <li><a id="Registrar" class="ms-2" href="{% url 'openConf' %}">Configurações</a></li>
+                    <li><a id="LogOut" class="ms-2" href="{% url 'deslogar' %}">LogOut</a></li>
+                    {% endif %}
+                </ul>
+            </li>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+      <div class="barra1 container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="linha container-fluid navbar-nav me-auto my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 300px;">
+            <li class="nav-item">
+              <a class="nav-item nav-link text-white" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-item nav-link" id="texto-teste" href="{% url 'openHistory' %}">História</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-item nav-link dropdown-toggle me-1" id="texto-teste"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Fundamentos
+              </a>
+              <ul class="dropdown-menu" style="background-color: #192a50d7;" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 1 %}">Recepção</a></li>
+                <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 2 %}">Saque</a></li>
+                <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 3 %}">Levantamento</a></li>
+                <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 4 %}">Bloqueio</a></li>
+                <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 5 %}">Ataque</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-item nav-link" href="{% url 'openRegras' %}" id="texto-teste">Regras</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-item nav-link" href="{% url 'openCurious' %}" style="width: 120px;" id="texto-teste">Curiosidades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-item nav-link" href="{% url 'openRefs' %}" id="texto-teste">Referências</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-item nav-link" id="texto-teste" style="width: 180px;" href="{% url 'openChat' %}">Chat da Comunidade</a>
+            </li>
+            <div id="form" class="container-xxl justify-content-end">
+           </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  <!-- Fim Header -->
+    <div class="justify-content-center mt-5 mb-5">
+        <h4 class="text-center fw-light mt-3 wow bounceInDown" data-wow-delay="0.2s" id="spanOrange"><i class="me-2" data-feather="corner-down-right"></i>Regras<i class="ms-2" data-feather="corner-down-left"></i></h4>
+    </div>
+    <div>
+        <p class="justify-content-center text-center text-white mt-5 mb-5 wow slideInLeft" data-wow-delay="0.3s">As regras são objeto de extrema importâcia em um esporte e, você pode conferir as do voleibol em <span><br><a id="spanOrange" href="https://institucional.cbv.com.br/arquivos/cobrav/quadra/regra_2021-2024_-_final.pdf?20221005064415">REGRAS OFICIAIS DE VOLEIBOL 2021-2024</a></span></p>
+    </div>
+    <div class="rules-container mt-3 mb-4">
+        <div class="rule text-white text-center wow bounceInUp" data-wow-delay="0.3s" onclick="toggleRule(1)">Quadra</div>
+        <div class="rule-content mt-4" style="margin-bottom: 30px;" id="rule-content-1">
+            <div class="container">
+                <div class="text mt-2">
+                  <div>
+                    <p class="text-desc p text1-recep  fw-light mt-2"><i class="circulo" data-feather="arrow-right-circle"></i> Medidas: a quadra oficial de voleibol tem um formato de retângulo medindo 18m x 9m com 3m de largura em todos os lados como espaço livre;<br><i class="circulo" data-feather="arrow-right-circle"></i> Linha central: é a linha que divide a quadra em duas áreas de tamanhos iguais (9mX9m), onde está posicionada verticalmente a rede do jogo. As duas equipes se posicionam uma em cada lado da quadra;<br><i class="circulo" data-feather="arrow-right-circle"></i> Linha de Ataque: São duas linhas( uma de cada lado da quadra) localizadas 3m a partir da linha central. Também chamada de “zona da frente”, ela está paralela a linha central e representa onde os jogadores atacam;<br><i class="circulo" data-feather="arrow-right-circle"></i> Rede: Possui 1m de largura por 9,5m de comprimento, ela passa 25 a 50 cm fora da delimitação da quadra.<br><i class="circulo" data-feather="arrow-right-circle"></i> Altura da rede: Em jogos femininos a rede é posicionada a uma altura de 2,24m, em jogos masculinos a altura é de 2,43 (a altura é medida do chão até a borda superior da rede);<br><i class="circulo" data-feather="arrow-right-circle"></i> Antena: são 2 antenas, fixadas nos lados opostos da rede, alinhadas com a linha do chão, possuem 1,8m de comprimento. Sua função é delimitar o espaço lateral para passar a bola.<br><i class="circulo" data-feather="arrow-right-circle"></i> Postes: São utilizados para fixação da rede, possuem 2,33m de altura e estão localizados no chão distantes meio metro a um metro da linha central;</p>
+                  </div>
+                </div>
+            </div>
+            <div class="image">
+              <img class="img mb-1" src="{% static 'img/assetsPages/quadra-de-volei.webp' %}" alt="Imagem">
+            </div>
+        </div>
+        <div class="rule text-white  text-center wow bounceInUp" data-wow-delay="0.5s" onclick="toggleRule(2)">Equipes</div>
+        <div class="rule-content mt-4" style="margin-bottom: 30px;" id="rule-content-2">
+            <div class="container">
+                <div class="text mt-2">
+                  <div>
+                    <p class="text-desc p text1-recep  fw-light mt-2"><i class="circulo" data-feather="arrow-right-circle"></i> Em competições oficiais as equipes no voleibol são formadas por até 12 jogadores (6 titulares e  6 reservas), um técnico, até 2 assistentes e um assistente médico;</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="rule text-white text-center wow bounceInUp" data-wow-delay="0.7s" onclick="toggleRule(3)">Posição De Jogadores</div>
+        <div class="rule-content mt-4" style="margin-bottom: 30px;" id="rule-content-3">
+            <div class="container">
+                <div class="text mt-2">
+                  <div>
+                    <p class="text-desc p text1-recep  fw-light mt-2"><i class="circulo" data-feather="arrow-right-circle"></i> No momento que a bola é golpeada pelo sacador, cada equipe deve estar posicionada dentro de sua própria quadra de jogo, na ordem da rotação;<br><i class="circulo" data-feather="arrow-right-circle"></i> A posição dos jogadores em quadra é numerada de 1 a 6;<br><i class="circulo" data-feather="arrow-right-circle"></i> Os jogadores que estão próximos à rede, na zona de ataque, ocupam as posições 4 (frente - esquerda), 3 (frente - meio) e 2 ( frente - direita);<br><i class="circulo" data-feather="arrow-right-circle"></i> Os jogadores que estão na zona de defesa ( atrás da linha dos 3m) ocupam as posições 5 (atrás - esquerda), 6 (atrás - meio) e 1 (atrás - direita);<br><i class="circulo" data-feather="arrow-right-circle"></i> Após o saque os jogadores podem deslocar-se e ocupar qualquer posição na própria quadra e na zona livre;</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="rule text-white text-center wow bounceInUp" data-wow-delay="0.9s" onclick="toggleRule(4)">Rotação</div>
+        <div class="rule-content mt-4" style="margin-bottom: 30px;" id="rule-content-4">
+            <div class="container">
+                <div class="text mt-2">
+                  <div>
+                    <p class="text-desc p text1-recep  fw-light mt-2"><i class="circulo" data-feather="arrow-right-circle"></i> A rotação é o movimento dos jogadores de um time em sentido horário a fim de que cada jogador passe a ocupar a posição seguinte a sua;<br><i class="circulo" data-feather="arrow-right-circle"></i> A rotação básica ocorre todas as vezes em que uma equipe marca um ponto após o saque da equipe adversária;<br><i class="circulo" data-feather="arrow-right-circle"></i>  Se for o primeiro saque do set, a equipe não realiza a rotação;</p>
+                  </div>
+                </div>
+            </div>
+            <div class="image">
+              <img class="img mb-1" src="{% static 'img/assetsPages/rotacao2.png' %}" alt="Imagem">
+            </div>
+        </div>
+        <div class="rule text-center text-white mt-0 wow bounceInUp" data-wow-delay="1.1s" onclick="toggleRule(5)">Faltas</div>
+        <div class="rule-content mt-4" style="margin-bottom: 30px;" id="rule-content-5">
+            <div class="container">
+                <div class="text mt-2">
+                  <div>
+                    <p class="text-desc p text1-recep  fw-light mt-0"><i class="circulo" data-feather="arrow-right-circle"></i> Falta por quatro toques: Cada equipe tem direito a três toques na bola antes de passá-la para a quadra adversária. Caso a equipe toque mais de 3 vezes é assinalado falta;<br><i class="circulo" data-feather="arrow-right-circle"></i> Falta por dois toques: marcada caso um jogador toque a bola 2 vezes consecutivas;<br><i class="circulo" data-feather="arrow-right-circle"></i> Falta por condução: Acontece caso um jogador segura a bola, ou a lance ao invés de rebate-lá;<br><i class="circulo" data-feather="arrow-right-circle"></i> Falta por toque de apoio: Marcada quando um jogador se apoia em algum objeto para alcançar a bola;<br><i class="circulo" data-feather="arrow-right-circle"></i> Falta por Toque na rede: Marcada quando o jogador toca a rede, entre as antenas, é assinalado uma falta. Entretanto, quando a bola é enviada em direção à rede, de um jeito que pode levar um contato entre algum jogador e a rede, não há falta;<br><i class="circulo" data-feather="arrow-right-circle"></i> Falta por Invasão por cima: Acontece quando um jogador atrapalha a jogada do adversário e quando invade o espaço adversário sob a rede;<br><i class="circulo" data-feather="arrow-right-circle"></i> Falta por Invasão por baixo: Acontece quando os pés do jogador entram totalmente na quadra do time adversário;</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="rule text-center text-white mt-0 wow bounceInUp" data-wow-delay="1.3s" onclick="toggleRule(6)">Regras do Jogo</div>
+        <div class="rule-content mt-4" style="margin-bottom: 30px;" id="rule-content-6">
+            <div class="container">
+                <div class="text mt-2">
+                  <div>
+                    <p class="text-desc p text1-recep fw-light mt-0"><i class="circulo" data-feather="arrow-right-circle"></i> Contato com a bola: Um jogador não pode tocar a bola 2 vezes seguidas. Cada time pode tocar na bola até 3 vezes antes de enviá-la para o time adversário;<br><i class="circulo" data-feather="arrow-right-circle"></i> Ponto: Um ponto é marcado quando a equipe consegue fazer a bola tocar no chão dentro da quadra adversária. Quando acontece alguma falta ou penalidade em uma equipe, se considera o ponto para a equipe adversária.<br><i class="circulo" data-feather="arrow-right-circle"></i> Rally: O Rally é uma sequência de ações que acontecem do momento em que o saque é executado até alguma equipe fazer um ponto;<br><i class="circulo" data-feather="arrow-right-circle"></i> Saque: Se a equipe que realizou o saque perder o ponto, o saque é da equipe adversária, caso ela ganhe o ponto sua equipe continua sacando e não precisa realizar a rotação. Se o saque não for realizado no tempo previsto, 8 segundos depois do apito do árbitro, a equipe  perde o direito ao saque.<br><i class="circulo" data-feather="arrow-right-circle"></i> Se um jogador de cada time cometer falta ao mesmo tempo, no mesmo Rally, é assinalado uma falta dupla, e terão de repetir o Rally.</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="rule text-center text-white mt-0 wow bounceInUp" data-wow-delay="1.5s" onclick="toggleRule(7)">Pontuação</div>
+        <div class="rule-content mt-4" style="margin-bottom: 30px;" id="rule-content-7">
+            <div class="container">
+                <div class="text mt-2">
+                  <div>
+                    <p class="text-desc p text1-recep  fw-light mt-0"><i class="circulo" data-feather="arrow-right-circle"></i> O voleibol é jogado em sets;<br><i class="circulo" data-feather="arrow-right-circle"></i> Uma partida de voleibol tem pelo menos 3 sets e no máximo 5 sets;<br><i class="circulo" data-feather="arrow-right-circle"></i> Cada set é terminado quando uma equipe alcança os 25 pontos tendo 2 pontos de vantagem do seu adversário. Caso não tenha, o set prossegue até que uma equipe conquiste essa vantagem;<br><i class="circulo" data-feather="arrow-right-circle"></i> Vencerá a partida a equipe que primeiro vencer 3 sets;<br><i class="circulo" data-feather="arrow-right-circle"></i> Em caso de empate em 2 sets a 2, o quinto set será disputado;<br><i class="circulo" data-feather="arrow-right-circle"></i> O quinto set, também conhecido como Tie - Break é disputado até que uma equipe alcance 15 pontos tendo 2 pontos de vantagem do seu adversário. Caso não tenha, o set prossegue até que uma equipe conquiste essa vantagem;<br></p>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="rule text-center text-white mt-0 wow bounceInUp" data-wow-delay="1.7s" onclick="toggleRule(8)">Líbero</div>
+        <div class="rule-content mt-2" style="margin-bottom: 20px;" id="rule-content-8">
+            <div class="container">
+                <div class="text mt-2">
+                  <div>
+                    <p class="text-desc p text1-recep  fw-light mt-0"><i class="circulo" data-feather="arrow-right-circle"></i> O líbero é um jogador especializado na defesa do time;<br><i class="circulo" data-feather="arrow-right-circle"></i> Os líberos deverão usar um uniforme de cor diferente do uniforme de sua equipe;<br><i class="circulo" data-feather="arrow-right-circle"></i> O líbero pode substituir qualquer jogador que ocupe a posição de trás (1, 5, 6)não podendo fazer o toque na área de ataque da quadra;<br><i class="circulo" data-feather="arrow-right-circle"></i> O líbero não pode atacar, bloquear e sacar.<br><i class="circulo" data-feather="arrow-right-circle"></i> As trocas do líbero não contam como substituições, elas são ilimitadas, devendo haver um rally completo entre duas trocas com o líbero.<br><i class="circulo" data-feather="arrow-right-circle"></i> O Líbero e o seu jogador regular que efetuar a troca somente poderão entrar ou deixar a quadra através da zona de substituição;<br></i> Caso o líbero seja expulso ou desqualificado por qualquer motivo, o jogador poderá ser trocado imediatamente pelo segundo líbero. Caso a equipe tenha somente um líbero, a mesma terá direito a fazer uma redesignação;<br></p>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="rule text-center text-white mt-0 wow bounceInUp" data-wow-delay="1.9s" onclick="toggleRule(9)">Equipe de arbitragem</div>
+        <div class="rule-content mt-2" style="margin-bottom: 20px;" id="rule-content-9">
+            <div class="container" style="height: 10vh;">
+                <div class="text mt-2">
+                  <div>
+                    <p class="text-desc p text1-recep  fw-light mt-0"><i class="circulo" data-feather="arrow-right-circle"></i> É composta por 1ºárbitro, 2ºárbitro, árbitro de desafio, árbitro reserva, apontador, e quatro (dois por lado da quadra) juízes de linha.</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="rule text-center text-white mt-0 wow bounceInUp" data-wow-delay="2.1s" onclick="toggleRule(10)">Substituições</div>
+        <div class="rule-content mt-0" style="margin-bottom: 10px;" id="rule-content-10">
+            <div class="container">
+                <div class="text mt-1">
+                  <div>
+                    <p class="text-desc p text1-recep fw-light"><i class="circulo" data-feather="arrow-right-circle"></i> As substituições requerem autorização do árbitro;<br><i class="circulo" data-feather="arrow-right-circle"></i> Cada equipe pode realizar no máximo até 6 substituições por set;<br><i class="circulo" data-feather="arrow-right-circle"></i> Um ou mais jogadores podem ser substituídos ao mesmo tempo;<br><i class="circulo" data-feather="arrow-right-circle"></i> Um jogador da formação inicial pode deixar o jogo e retornar, mais somente uma vez no set e para a mesma posição que ocupava anteriormente;<br><i class="circulo" data-feather="arrow-right-circle"></i> As substituições devem ocorrer dentro da zona de substituições;</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid">
+      <div class="justify-content-center text-white fw-light d-flex">
+          <div class="text-center">
+            <div class="text-center d-flex justify-content-center">
+              <div class="me-3 mt-2"><a id="contato" href="https://github.com/IceyPiter"><i data-feather="github"></i> GitHub</a></div>
+              <div class="me-3 mt-2"><a id="contato" href="https://twitter.com/MoraesMichalski?t=QQjbt5rUnsjlaBzuRChZ4g&s=09"><i data-feather="twitter"></i> Twitter</a></div>
+              <div class="me-3 mt-2"><a id="contato" href="https://instagram.com/dpedromichalski?utm_source=qr&iqshid=MzNINGNkZWQ4Mg%3D%3D"><i data-feather="instagram"></i> Instagram</a></div>
+            </div>
+            <h5 style="font-size:13px; font-style: oblique; font-weight: lighter; margin-top: 10px;">Developed By Piter &#169 2023</h5>
+          </div>
+          <h3 class="traco fw-bold me-3">-</h3>
+          <div class="text-center">
+            <div class="text-center d-flex justify-content-center">
+              <div class="me-3 mt-2"><a id="contato" href="https://github.com/Linkadah"><i data-feather="github"></i> GitHub</a></div>
+              <div id="contato" class="me-3 mt-2"><a id="contato" href="https://www.twitch.tv/linkadah_?sr=a"><i data-feather="twitch"></i> Twitch</a></div>
+              <div class="me-3 mt-2"><a id="contato" href="https://instagram.com/_krlachristinacomh?igshid=MzRlODBiNWFlZA=="><i data-feather="instagram"></i> Instagram</a></div>
+            </div>
+            <h5 style="font-size:13px; font-style: oblique; font-weight: lighter; margin-top: 10px;">Developed By Carla &#169 2023</h5>
+          </div>
+      </div>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script>feather.replace()</script>
+<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/wow.min.js' %}"></script><script>new WOW().init();</script>
+</body>
+</html>

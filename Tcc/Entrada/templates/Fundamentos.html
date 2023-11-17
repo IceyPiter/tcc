@@ -1,0 +1,402 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="icon" href="{% static 'img/Volleyball-logo.png' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/css-Fundamentos.css' %}"></link>
+  </head>
+<body>
+  <!-- Início Header -->
+  <div class="barra container-fluid d-flex">
+    <img class="img-navbar d-inline-block" src="{% static 'img/Volleyball-logo.png' %}" width="30" height="30" alt="">
+    <h3 class="text-white fw-light ms-3">WebVolei</h3>
+    <div class="login container-fluid" style="margin-right: 60px;">
+      <li class="nav-item dropdown d-flex align-items-center">
+        <a class="nav-item nav-link dropdown-toggle text-white" id="texto-teste"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          -- Usuário --
+        </a>
+        <ul id="elementsUser" class="dropdown-menu text-white fw-light" style="background-color: #e98b10d7;" aria-labelledby="navbarDropdown">
+          {% if caso1 == False %}
+          <li><a id="Login" class="ms-2" href="{% url 'openLogin' %}">Login</a></li>
+          <li><a id="Registrar" class="ms-2" href="{% url 'openUser' %}">Registrar-se</a></li>
+          {% endif %}
+          {% if caso1 == True %}
+          <li><a id="Login" class="ms-2" href="">{{ user.get_username }}</a></li>
+          <li><a id="Registrar" class="ms-2" href="{% url 'openConf' %}">Configurações</a></li>
+          <li><a id="LogOut" class="ms-2" href="{% url 'deslogar' %}">LogOut</a></li>
+          {% endif %}
+        </ul>
+      </li>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light p-0">
+    <div class="barra1 container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="linha container-fluid navbar-nav me-auto my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 300px;">
+          <li class="nav-item">
+            <a class="nav-item nav-link text-white" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link" id="texto-teste" href="{% url 'openHistory' %}">História</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-item nav-link dropdown-toggle me-1" id="texto-teste"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Fundamentos
+            </a>
+            <ul class="dropdown-menu" style="background-color: #192a50d7;" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 1 %}">Recepção</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 2 %}">Saque</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 3 %}">Levantamento</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 4 %}">Bloqueio</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 5 %}">Ataque</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link" href="{% url 'openRegras' %}" id="texto-teste">Regras</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link" href="{% url 'openCurious' %}" style="width: 120px;" id="texto-teste">Curiosidades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link" href="{% url 'openRefs' %}" id="texto-teste">Referências</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-item nav-link" id="texto-teste" style="width: 180px;" href="{% url 'openChat' %}">Chat da Comunidade</a>
+          </li>
+          <div id="form" class="container-xxl justify-content-end">
+         </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Fim Header -->
+
+  {% if caso == "1" %}
+  <!-- Início Recepção -->
+  <div class="justify-content-center text-center mb-0 p-0">
+    <h2 id="Recepcao" class="fw-light wow slideInLeft" data-wow-delay="0.2s"><a id="spanOrange"><i data-feather="arrow-left" ></i></a> Recepção <a id="spanOrange" href="{% url 'openFundamentos' 2 %}"><i data-feather="arrow-right"></i></a></h2>
+  </div>
+  <div class="container">
+    <div class="text wow slideInLeft" data-wow-delay="0.3s">
+      <div>
+        <p class="p text1-recep text-white fw-light">A recepção do saque no Voleibol é o primeiro toque na bola dado pela equipe que está recebendo o saque. A manchete é o fundamento mais utilizado para a recepção de saques e para a defesa de bolas cortadas, pois o contato da bola se faz no antebraço, região que suporta melhor os fortes impactos provocados por ela.</p>
+      </div>
+    </div>
+    <div class="image">
+      <img class="img mb-1 wow slideInRight" data-wow-delay="0.4s" src="{% static 'img/assetsPages/image1-teste.png' %}" alt="Imagem">
+    </div>
+  </div>
+  <div class="container">
+    <div class="image">
+      <img class="img wow slideInLeft" data-wow-delay="0.4s" src="{% static 'img/assetsPages/imagem3-teste.png' %}" alt="Imagem">
+      <img class="img wow slideInLeft" data-wow-delay="0.4s" src="{% static 'img/assetsPages/imagem2-teste.png' %}" alt="Imagem">
+    </div>
+    <div class="text wow slideInRight" data-wow-delay="0.3s">
+      <div>
+        <p class="p text1-recep text-white fw-light mt-2"><i  class="circulo" data-feather="arrow-right-circle"></i> O tronco deve estar posicionado de frente para a bola, pernas semi-flexionadas, como a posição de expectativa e os braços estendidos e unidos à frente do corpo;<br><i  class="circulo"  class="circulo" data-feather="arrow-right-circle"></i> Posição das mãos: Os dedos unidos de uma mão devem estar sobrepostos aos da outra, de forma que os polegares estendidos possam se tocar paralelamente.<br><i  class="circulo"  class="circulo" data-feather="arrow-right-circle"></i> No movimento de ataque à bola, as pernas se estendem e os braços permanecem sem movimento. O impacto da bola se dá no antebraço.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container-xxl py-5 mt-5 px-0 wow bounceInUp" data-wow-delay="0.2s">
+    <div class="row g-0">
+      <div class="video-text col-md-6 bg-dark d-flex align-items-center">
+          <div class="p-5">
+              <h6 id="spanOrange" class="section-title text-start text-uppercase mb-3">Video Apoio</h6>
+              <h1 class="text-white mb-4">Manchete | Vôlei</h1>
+              <p class="text-white mb-4">Canal: SIKANA Brasil / Português</p>
+              <p id="spanOrange" class="mb-4">Veja o passo a passo nas imagens e, assista o vídeo para aprender como realizar esse fundamento.</p>
+          </div>
+      </div>
+      <div class="col-md-6">
+        <div class="video-container">
+          <a href="https://www.youtube.com/watch?v=mi4m0tUhM0w" target="_blank">
+              <img src="https://img.youtube.com/vi/mi4m0tUhM0w/maxresdefault.jpg" alt="Video Thumbnail">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fim Recepção -->
+  {% endif %}
+
+  {% if caso == "2" %}
+  <!-- Início Saque -->
+  <div class="justify-content-center text-center mb-0 p-0">
+    <h2 id="Saque" class="fw-light wow slideInLeft" data-wow-delay="0.2s"><a id="spanOrange" href="{% url 'openFundamentos' 1 %}"><i data-feather="arrow-left" ></i></a> Saque <a id="spanOrange" href="{% url 'openFundamentos' 3 %}"><i data-feather="arrow-right"></i></a></h2>
+  </div>
+  <div class="container">
+    <div class="text wow slideInRight" data-wow-delay="0.3s">
+        <div>
+        <p class="p text1-recep text-white fw-light"> O saque, também chamado de serviço, é o fundamento que dá inicio ao Rally. Ele será realizado pelo jogador da posição 1. O jogador sacador deverá ficar atrás da linha de fundo de sua quadra, região chamada de zona de saque (compreende a área de 9m de largura atrás da linha de fundo de cada lado da quadra). Existem três tipos de saque no voleibol: Saque por baixo, saque por cima e saque viagem. Confira abaixo a maneira correta de se executar os saques por cima e por baixo.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Início Saque Por Cima -->
+  <div class="justify-content-start text-start mt-2 mb-0 p-0">
+    <h2 id="SaquePCIMA" class="fw-light mt-5 wow slideInLeft" data-wow-delay="0.2s"><i data-feather="arrow-right" ></i> Saque por Cima:</h2>
+  </div>
+  <div class="container" style="height: 20vh;">
+     <div class="text wow slideInLeft" data-wow-delay="0.3s">
+      <div>
+        <p class="p text1-recep text-white fw-light"> Em virtude da velocidade que o braço pode atingir, no saque por cima o impacto na bola é bem mais potente que o saque por baixo. Dessa forma ele é mais rápido e eficiente além de possuir uma trajetória bem definida, por isso é o tipo de saque mais utilizado nos jogos de voleibol.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text mt-2 wow slideInLeft" data-wow-delay="0.3s">
+      <div>
+        <p class="p text1-recep text-white fw-light mt-2"><i  class="circulo"  class="circulo" data-feather="arrow-right-circle"></i> Posicione – se atrás da linha de fundo da zona de saque;<br><i  class="circulo"  class="circulo" data-feather="arrow-right-circle"></i> Posicione o pé de apoio à frente do corpo (o pé de apoio é o pé contrário à mão que irá realizar o saque);<br><i  class="circulo"  class="circulo" data-feather="arrow-right-circle"></i> Segure a bola com uma ou as duas mãos para fazer o lançamento. Se for segurar com uma mão, use a mão que não irá golpear a bola;<br><i  class="circulo"  class="circulo" data-feather="arrow-right-circle"></i> Lance a bola para cima, a uma altura baixa, um pouco acima da altura da sua cabeça e um pouco a frente do seu corpo;<br><i  class="circulo"  class="circulo" data-feather="arrow-right-circle"></i> Bata na bola com a palma da mão, com ela ainda acima da altura da sua cabeça;</p>
+      </div>
+    </div>
+    <div class="image">
+      <img class="img wow slideInRight" data-wow-delay="0.4s" src="{% static 'img/assetsPages/SaquePCima.png' %}" alt="Imagem">
+    </div>
+  </div>
+  <div class="container-xxl py-5 mt-5 px-0 wow bounceInUp" data-wow-delay="0.2s">
+    <div class="row g-0">
+      <div class="video-text col-md-6 bg-dark d-flex align-items-center">
+          <div class="p-5">
+              <h6 id="spanOrange" class="section-title text-start text-uppercase mb-3">Video Apoio</h6>
+              <h1 class="text-white mb-4">Saque por cima | Vôlei</h1>
+              <p class="text-white mb-4">Canal: Fofão 7 Oficial</p>
+              <p id="spanOrange" class="mb-4">Veja o passo a passo nas imagens e, assista o vídeo para aprender como realizar esse fundamento.</p>
+          </div>
+      </div>
+      <div class="col-md-6">
+        <div class="video-container">
+          <a href="https://www.youtube.com/watch?v=baYmL71x_Ocw" target="_blank">
+              <img src="https://img.youtube.com/vi/baYmL71x_Oc/maxresdefault.jpg" alt="Video Thumbnail">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fim Saque Por Cima -->
+
+  <!-- Início Saque Por Baixo -->
+  <div class="justify-content-start text-start mb-0 p-0">
+    <h2 id="SaquePBAIXO" class="fw-light mt-5 wow slideInLeft" data-wow-delay="0.2s"><i data-feather="arrow-right" ></i> Saque por Baixo:</h2>
+  </div>
+  <div class="container">
+     <div class="text wow slideInLeft" data-wow-delay="0.3s">
+      <div>
+        <p class="p text1-recep text-white fw-light"> A denominação “saque por baixo” diz respeito à forma de como a bola é golpeada, de baixo para cima. Esse tipo de saque é indicado para iniciantes no voleibol. A trajetória da bola durante o saque é alta e forma uma “parábola”, fazendo com que o saque seja mais lento e não ofereça dificuldades para a recepção adversária.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="image">
+      <img class="img wow slideInLeft" data-wow-delay="0.4s" src="{% static 'img/assetsPages/saquePBaixo.png' %}" alt="Imagem">
+    </div>
+    <div class="text mt-2 wow slideInRight" data-wow-delay="0.3s">
+      <div>
+        <p class="p text1-recep text-white fw-light mt-2"><i  class="circulo"  class="circulo" data-feather="arrow-right-circle"></i>As pernas devem estar afastadas, joelhos semiflexionados e o tronco inclinado para frente;<br><i  class="circulo"  class="circulo" data-feather="arrow-right-circle"></i> Segure a bola com a mão oposta à mão que irá golpear a bola;<br><i  class="circulo"  class="circulo" data-feather="arrow-right-circle"></i> A perna do mesmo lado da mão que irá golpear a bola deve ficar apoiada para trás;<br><i  class="circulo"  class="circulo" data-feather="arrow-right-circle"></i> Leve o braço que irá golpear a bola um pouco atrás do corpo com os cotovelos ligeiramente flexionados;<br><i  class="circulo"  class="circulo" data-feather="arrow-right-circle"></i> Lance a bola levemente para o alto e faça o golpe de saque;<br><i  class="circulo"  class="circulo" data-feather="arrow-right-circle"></i> Ao lançar a bola o braço que está atrás do corpo irá se mover com velocidade em direção à bola;<br><i  class="circulo"  class="circulo" data-feather="arrow-right-circle"></i> O golpe realizado na bola pode ser com a mão fechada ou aberta;<br><i  class="circulo"  class="circulo" data-feather="arrow-right-circle"></i> A bola deve ser golpeada na altura da cintura com força para que chegue até a quadra adversária passando por cima da rede;</p>
+      </div>
+    </div>
+  </div>
+  <div class="container-xxl py-5 mt-5 px-0 wow bounceInUp" data-wow-delay="0.2s">
+    <div class="row g-0">
+      <div class="video-text col-md-6 bg-dark d-flex align-items-center">
+          <div class="p-5">
+              <h6 id="spanOrange" class="section-title text-start text-uppercase mb-3">Video Apoio</h6>
+              <h1 class="text-white mb-4">Saque por baixo | Vôlei</h1>
+              <p class="text-white mb-4">SIKANA Brasil / Português</p>
+              <p id="spanOrange" class="mb-4">Veja o passo a passo nas imagens e, assista o vídeo para aprender como realizar esse fundamento.</p>
+          </div>
+      </div>
+      <div class="col-md-6">
+        <div class="video-container">
+          <a href="https://www.youtube.com/watch?v=QdcgOZyKQTU" target="_blank">
+              <img src="https://img.youtube.com/vi/QdcgOZyKQTU/maxresdefault.jpg" alt="Video Thumbnail">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fim Saque Por Baixo -->
+  <!-- Fim Saque -->
+  {% endif %}
+
+  {% if caso == "3" %}
+  <!-- Início Levantamento -->
+  <div class="justify-content-center text-center mb-0 p-0">
+    <h2 id="Levantamento" class="fw-light mb-5 wow slideInLeft" data-wow-delay="0.2s"><a id="spanOrange" href="{% url 'openFundamentos' 2 %}"><i data-feather="arrow-left"></i></a> Levantamento <a id="spanOrange" href="{% url 'openFundamentos' 4 %}"><i data-feather="arrow-right"></i></a></h2>
+  </div>
+  <div class="container">
+    <div class="text wow slideInLeft" data-wow-delay="0.3s">
+      <div>
+        <p class="p text1-recep text-white fw-light">O levantamento é, normalmente, o segundo toque dos três toques permitidos para cada equipe. A técnica mais utilizada para realizar um levantamento é o toque, também chamado de voleio.  O objetivo deste fundamento é levantar a bola próximo da rede para que um companheiro da equipe realize um ataque. O levantamento normalmente é realizado pelo jogador que ocupa a posição 3.</p>
+      </div>
+    </div>
+    <div class="image">
+      <img class="img mb-1 wow slideInRight" data-wow-delay="0.4s" src="{% static 'img/assetsPages/Levantamento.png' %}" alt="Imagem">
+    </div>
+  </div>
+  <div class="container">
+    <div class="image">
+      <img class="img wow slideInLeft" data-wow-delay="0.4s" src="{% static 'img/assetsPages/Levantamento2.png' %}" alt="Imagem">
+    </div>
+    <div class="text mt-2 wow slideInRight" data-wow-delay="0.3s">
+      <div>
+        <p class="p text1-recep text-white fw-light mt-2"><i  class="circulo"  class="circulo" data-feather="arrow-right-circle"></i> Posição do corpo: Para realizar o toque, o jogador deve estar posicionado com o corpo “embaixo” da bola, com as pernas levemente flexionadas uma mais à frente que a outra. Os cotovelos flexionados, em um ângulo reto, acima dos ombros.  Ao tocar na bola as pernas devem ser esticadas, para elevar o corpo.<br><i  class="circulo"  class="circulo" data-feather="arrow-right-circle"></i> Posição da mão e dos dedos: As mãos devem ficar acima da testa, abertas e afastadas uma da outra. Os dedos devem ficar ligeiramente curvados formando um triângulo com os polegares e indicadores.<br><i  class="circulo"  class="circulo" data-feather="arrow-right-circle"></i> Superfície de contato: Para uma boa realização do toque, a bola deve ser atingida com as pontas dos dedos, esticando o braço para cima.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container-xxl py-5 mt-5 px-0 wow bounceInUp" data-wow-delay="0.2s">
+    <div class="row g-0">
+      <div class="video-text col-md-6 bg-dark d-flex align-items-center">
+          <div class="p-5">
+              <h6 id="spanOrange" class="section-title text-start text-uppercase mb-3">Video Apoio</h6>
+              <h1 class="text-white mb-4">Levantamento | Vôlei</h1>
+              <p class="text-white mb-4">Canal: SIKANA Brasil / Português</p>
+              <p id="spanOrange" class="mb-4">Veja o passo a passo nas imagens e, assista o vídeo para aprender como realizar esse fundamento.</p>
+          </div>
+      </div>
+      <div class="col-md-6">
+        <div class="video-container">
+          <a href="https://www.youtube.com/watch?v=3gsHw_RJdpw" target="_blank">
+              <img src="https://img.youtube.com/vi/3gsHw_RJdpw/maxresdefault.jpg" alt="Video Thumbnail">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fim Levantamento -->
+  {% endif %}
+
+  {% if caso == "4" %}
+  <!-- Início Bloqueio -->
+  <div class="justify-content-center text-center mb-0 p-0">
+    <h2 id="Bloqueio" class="fw-light wow slideInLeft" data-wow-delay="0.2s"><a id="spanOrange" href="{% url 'openFundamentos' 3 %}"><i data-feather="arrow-left" ></i></a> Bloqueio <a id="spanOrange" href="{% url 'openFundamentos' 5 %}"><i  data-feather="arrow-right"></i></a></h2>
+  </div>
+  <div class="container">
+    <div class="image">
+      <img class="img mb-1 wow slideInLeft" data-wow-delay="0.4s" src="{% static 'img/assetsPages/Bloqueio1.png' %}" alt="Imagem">
+    </div>
+
+    <div class="text wow slideInRight" data-wow-delay="0.3s">
+      <div>
+        <p class="p text1-recep text-white fw-light"> O bloqueio é um fundamento que visa interceptar junto à rede a bola cortada pelo adversário. O toque da bola no jogador que realizou o bloqueio não é contabilizado nos três toques que são permitidos por equipe. Existem três possibilidades de bloqueio: o simples ( apenas 1 jogador realiza o bloqueio) duplo ( 2 jogadores irão realizar o bloqueio) triplo ( 3 jogadores realizam o bloqueio.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="text mt-2 wow slideInLeft" data-wow-delay="0.3s">
+      <div>
+        <p class="p text1-recep text-white fw-light mt-2"><i class="circulo" data-feather="arrow-right-circle"></i> No momento adequado, o bloqueador salta, estendendo as pernas e contando com o auxílio dos braços que serão estendidos simultaneamente em direção à bola. Nos bloqueios ofensivos, as mãos invadem o espaço aéreo do adversário e se posicionam abertas, estendidas, firmes, uma ao lado da outra, formando um obstáculo à passagem da bola. O bloqueador espera o impacto da bola, pois ele não poderá tocá-la antes do atacante, para flexionar os punhos, enviando-a contra o solo do campo adversário e, também, para impedir que ela “espirre” (desvie) para fora da quadra.</p>
+      </div>
+    </div>
+    <div class="image">
+      <img class="img wow slideInRight" data-wow-delay="0.4s" src="{% static 'img/assetsPages/Bloqueio2.png' %}" alt="Imagem">
+    </div>
+  </div>
+  <div class="container">
+    <div class="text wow slideInLeft" data-wow-delay="0.3s">
+      <div>
+        <p class="p text1-recep text-white fw-light">Após se direcionar dando passadas laterais próximos a rede e em direção ao atacante adversário que irá realizar o ataque, o jogador se posicionará em pé, junto à rede, com os joelhos semi - flexionados, pés paralelos em afastados na largura dos ombros. Os braços estarão semi-flexionados com as mãos ao lado dos ombros, com as palmas voltadas para frente.<br><i class="circulo" data-feather="arrow-right-circle"></i> Realizado o bloqueio, acontece a queda, que deve ser feita com a flexão dos joelhos a fim de manter o equilíbrio e amortecer o impacto.</p>
+      </div>
+    </div>
+  </div>
+  <div  class="container-xxl py-5 mt-5 px-0 wow bounceInUp" data-wow-delay="0.2s">
+    <div class="row g-0">
+      <div class="video-text col-md-6 bg-dark d-flex align-items-center">
+          <div  class="p-5">
+              <h6 id="spanOrange" class="section-title text-start text-uppercase mb-3">Video Apoio</h6>
+              <h1 class="text-white mb-4">Bloqueio | Vôlei</h1>
+              <p class="text-white mb-4">Canal: SIKANA Brasil / Português</p>
+              <p id="spanOrange" class="mb-4">Veja o passo a passo nas imagens e, assista o vídeo para aprender como realizar esse fundamento.</p>
+          </div>
+      </div>
+      <div class="col-md-6">
+        <div class="video-container">
+          <a href="https://www.youtube.com/watch?v=4wYldt8MI8g" target="_blank">
+              <img src="https://img.youtube.com/vi/4wYldt8MI8g/maxresdefault.jpg" alt="Video Thumbnail">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fim Bloqueio -->
+  {% endif %}
+
+  {% if caso == "5" %}
+  <!-- Início Ataque -->
+  <div class="justify-content-center text-center mb-0 p-0">
+    <h2 id="Ataque" class="fw-light wow slideInLeft" data-wow-delay="0.2s"><a id="spanOrange" href="{% url 'openFundamentos' 4 %}"><i data-feather="arrow-left"></i></a> Ataque <a id="spanOrange"><i data-feather="arrow-right"></i></a></h2>
+  </div>
+  <div class="container" style="height: 20vh;">
+    <div class="text wow slideInLeft" data-wow-delay="0.3s">
+     <div>
+       <p class="p text1-recep text-white fw-light"> O ataque é o ultimo toque (dos três toques permitidos) da equipe na bola antes de enviá-la para a quadra adversária. Normalmente realizado através de uma cortada, fundamento do voleibol que finaliza a maioria das ações ofensivas e visa enviar, através de um forte golpe dado durante um salto à bola de encontro ao solo da quadra adversária. Requer muita coordenação visio-motora pois toda ação é condicionada pelas características da trajetória do levantamento.</p>
+     </div>
+   </div>
+  </div>
+  <div class="container">
+    <div class="text mt-2 wow slideInLeft" data-wow-delay="0.3s">
+      <div>
+        <p class="p text1-recep text-white fw-light mt-2"><i class="circulo" data-feather="arrow-right-circle"></i> O ataque inicia com o deslocamento do jogador até a bola. Nesse deslocamento pode ser realizado 1, 2, 3 ou mais passadas de corrida, com o braços se mantendo semi – flexionados ao lado do corpo;<br><i class="circulo" data-feather="arrow-right-circle"></i> Ao realizar o último passo o jogador deve saltar para cima e girar os braços para frente ao mesmo tempo para ganhar altura (quando mais alto conseguir saltar, mais forte será seu ataque).<br><i class="circulo" data-feather="arrow-right-circle"></i> A batida na bola deverá ser de cima para baixo, com flexão do punho. Com a mão aberta e os dedos juntos, gire o braço no ombro e chicoteie com o antebraço para mover a mão rapidamente em direção à bola.<br><i class="circulo" data-feather="arrow-right-circle"></i> Após o salto, no momento da aterrissagem, flexione os joelhos para amortecer o impacto.</p>
+      </div>
+    </div>
+    <div class="image">
+      <img class="img wow slideInRight" data-wow-delay="0.3s" src="{% static 'img/assetsPages/Ataque.png' %}" alt="Imagem">
+    </div>
+  </div>
+  <div class="container-xxl py-5 mt-5 px-0 wow bounceInUp" data-wow-delay="0.2s">
+    <div class="row g-0">
+      <div class="col-md-6 bg-dark d-flex align-items-center">
+          <div class="p-5">
+              <h6 id="spanOrange" class="section-title text-start text-uppercase mb-3">Video Apoio</h6>
+              <h1 class="text-white mb-4">Ataque | Vôlei</h1>
+              <p class="text-white mb-4">Canal: SIKANA Brasil / Português</p>
+              <p id="spanOrange" class="mb-4">Veja o passo a passo nas imagens e, assista o vídeo para aprender como realizar esse fundamento.</p>
+          </div>
+      </div>
+      <div class="col-md-6">
+        <div class="video-container">
+          <a href="https://www.youtube.com/watch?v=qmAmwQIPO9s" target="_blank">
+              <img src="https://img.youtube.com/vi/qmAmwQIPO9s/maxresdefault.jpg" alt="Video Thumbnail">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fim Ataque -->
+  {% endif %}
+
+  <footer class="container-fluid">
+    <div class="justify-content-center text-white fw-light d-flex">
+        <div class="text-center">
+          <div class="text-center d-flex justify-content-center">
+            <div class="me-3 mt-2"><a id="contato" href="https://github.com/IceyPiter"><i data-feather="github"></i> GitHub</a></div>
+            <div class="me-3 mt-2"><a id="contato" href="https://twitter.com/MoraesMichalski?t=QQjbt5rUnsjlaBzuRChZ4g&s=09"><i data-feather="twitter"></i> Twitter</a></div>
+            <div class="me-3 mt-2"><a id="contato" href="https://instagram.com/dpedromichalski?utm_source=qr&iqshid=MzNINGNkZWQ4Mg%3D%3D"><i data-feather="instagram"></i> Instagram</a></div>
+          </div>
+          <h5 style="font-size:13px; font-style: oblique; font-weight: lighter; margin-top: 10px;">Developed By Piter &#169 2023</h5>
+        </div>
+        <h3 class="traco fw-bold me-3">-</h3>
+        <div class="text-center">
+          <div class="text-center d-flex justify-content-center">
+            <div class="me-3 mt-2"><a id="contato" href="https://github.com/Linkadah"><i data-feather="github"></i> GitHub</a></div>
+            <div id="contato" class="me-3 mt-2"><a id="contato" href="https://www.twitch.tv/linkadah_?sr=a"><i data-feather="twitch"></i> Twitch</a></div>
+            <div class="me-3 mt-2"><a id="contato" href="https://instagram.com/_krlachristinacomh?igshid=MzRlODBiNWFlZA=="><i data-feather="instagram"></i> Instagram</a></div>
+          </div>
+          <h5 style="font-size:13px; font-style: oblique; font-weight: lighter; margin-top: 10px;">Developed By Carla &#169 2023</h5>
+        </div>
+    </div>
+  </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script>feather.replace()</script>
+<script src="{% static 'js/wow.min.js' %}"></script><script>new WOW().init();</script>
+</body>
+</html>

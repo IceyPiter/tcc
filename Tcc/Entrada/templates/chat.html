@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <meta name="description" content="Site sobre Voleibol - TCC, Informática">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="icon" href="{% static 'img/Volleyball-logo.png' %}">
+    <title>Chat</title>
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/css-Chat.css' %}">
+</head>
+
+<body>
+    <div class="barra container-fluid d-flex">
+      <img class="img-navbar d-inline-block" src="{% static 'img/Volleyball-logo.png' %}" width="30" height="30" alt="">
+      <h3 class="text-white fw-light ms-3">WebVolei</h3>
+      <div class="login container-fluid" style="margin-right: 60px;">
+        <li class="nav-item dropdown d-flex align-items-center">
+          <a class="nav-item nav-link dropdown-toggle text-white"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            -- Usuário --
+          </a>
+          <ul id="elementsUser" class="dropdown-menu text-white fw-light" style="background-color: #e98b10d7;" aria-labelledby="navbarDropdown">
+            <li><a id="Login" class="ms-2" href="">{{ user.get_username }}</a></li>
+            <li><a id="Registrar" class="ms-2" href="{% url 'openConf' %}">Configurações</a></li>
+            <li><a id="LogOut" class="ms-2" href="{% url 'deslogar' %}">LogOut</a></li>
+          </ul>
+        </li>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+      <div class="barra1 container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="linha container-fluid navbar-nav me-auto my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 300px;">
+            <li class="nav-item">
+              <a class="nav-item nav-link text-white" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-item nav-link" id="texto-teste" href="{% url 'openHistory' %}">História</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-item nav-link dropdown-toggle me-1" id="texto-teste"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Fundamentos
+              </a>
+              <ul class="dropdown-menu" style="background-color: #192a50d7;" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 1 %}">Recepção</a></li>
+                <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 2 %}">Saque</a></li>
+                <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 3 %}">Levantamento</a></li>
+                <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 4 %}">Bloqueio</a></li>
+                <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 5 %}">Ataque</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-item nav-link" href="{% url 'openRegras' %}" id="texto-teste">Regras</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-item nav-link" href="{% url 'openCurious' %}" style="width: 120px;" id="texto-teste">Curiosidades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-item nav-link" href="{% url 'openRefs' %}" id="texto-teste">Referências</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-item nav-link" id="texto-teste" style="width: 180px;" href="{% url 'openChat' %}">Chat da Comunidade</a>
+            </li>
+            <div id="form" class="container-xxl justify-content-end">
+           </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--Fim Barra de Navegação-->
+    <h3 id="spanOrange" class="text-center mt-5 mb-5 wow bounceInDown" data-wow-delay="0.3s">Deixe aqui sua dúvida, responderemos-lhe assim que possível!!</h3>
+    <div id="con">
+      <div id="textosMensage">
+      {% for i in mensagens %}
+      {% if i.key == None %}
+      <div class="chat-message container-fluid wow slideInLeft" data-wow-delay="0.3s" id="{{ i.mensage }}1" style="overflow-x: auto;">
+          <div class="user-name" id="user{{i.id_user}}">{{ i.id_user }}</div>
+          <div class="message-content">{{ i.mensage }}</div>
+          <button type="button" name="{{i.id_user}}" id="{{i.id}}" class="btn btn-info">Responder</button>
+      </div>
+      {% endif %}
+      {% for f in mensagens %}
+      {% if f.key == i %}
+      <div class="chat-response container-fluid wow slideInLeft" data-wow-delay="0.6s" name="{{ i.mensage }}" id="respostas" style="overflow-x: auto;">
+        <div class="user-name" id="user{{i.id_user}}">{{ f.id_user }}</div>
+        <div class="message-content">{{ f.mensage }}</div>
+        <a type="button" href="#{{i.mensage }}1" id="" class="btn btn-info">Resposta para {{ i.id_user }}</a>
+      </div>
+      {% endif %}
+      {% endfor %}
+      {% endfor %}
+    </div>
+
+    <form id="enMen" class="container-fluid text-center mb-1 mt-3" action="{% url 'mandar_msg' %}" method="post">
+      {% csrf_token %}
+      <h4 id="responde" name="responde" class="user-name text-white text-center"></h4>
+      <h4 id="nome" name="nome" class="user-name text-white text-center"></h4>
+      <input type="hidden" name="idresponse" id="idresponse" value="">
+      <input class="enMen" name="msg" type="text" id="mensagem" placeholder="Digite sua mensagem">
+      <button class="" type="submit">Enviar</button>
+    </form>
+    <!-- Fim Timeline -->
+    <footer class="container-fluid">
+      <div class="justify-content-center text-white fw-light d-flex">
+          <div class="text-center">
+            <div class="text-center d-flex justify-content-center">
+              <div class="me-3 mt-2"><a id="contato" href="https://github.com/IceyPiter"><i data-feather="github"></i> GitHub</a></div>
+              <div class="me-3 mt-2"><a id="contato" href="https://twitter.com/MoraesMichalski?t=QQjbt5rUnsjlaBzuRChZ4g&s=09"><i data-feather="twitter"></i> Twitter</a></div>
+              <div class="me-3 mt-2"><a id="contato" href="https://instagram.com/dpedromichalski?utm_source=qr&iqshid=MzNINGNkZWQ4Mg%3D%3D"><i data-feather="instagram"></i> Instagram</a></div>
+            </div>
+            <h5 style="font-size:13px; font-style: oblique; font-weight: lighter; margin-top: 10px;">Developed By Piter &#169 2023</h5>
+          </div>
+          <h3 class="traco fw-bold me-3">-</h3>
+          <div class="text-center">
+            <div class="text-center d-flex justify-content-center">
+              <div class="me-3 mt-2"><a id="contato" href="https://github.com/Linkadah"><i data-feather="github"></i> GitHub</a></div>
+              <div id="contato" class="me-3 mt-2"><a id="contato" href="https://www.twitch.tv/linkadah_?sr=a"><i data-feather="twitch"></i> Twitch</a></div>
+              <div class="me-3 mt-2"><a id="contato" href="https://instagram.com/_krlachristinacomh?igshid=MzRlODBiNWFlZA=="><i data-feather="instagram"></i> Instagram</a></div>
+            </div>
+            <h5 style="font-size:13px; font-style: oblique; font-weight: lighter; margin-top: 10px;">Developed By Carla &#169 2023</h5>
+          </div>
+      </div>
+    </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <script>feather.replace()</script>
+  <script src="{% static 'js/script.js' %}"></script>
+  <script src="{% static 'js/wow.min.js' %}"></script><script>new WOW().init();</script>
+  </body>
+</html>

@@ -1,0 +1,269 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="icon" href="{% static 'img/Volleyball-logo.png' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/css-History.css' %}"></link>
+</head>
+<body>
+  <div class="barra container-fluid d-flex">
+    <img class="img-navbar d-inline-block" src="{% static 'img/Volleyball-logo.png' %}" width="30" height="30" alt="">
+    <h3 class="text-white fw-light ms-3">WebVolei</h3>
+    <div class="login container-fluid" style="margin-right: 60px;">
+      <li class="nav-item dropdown d-flex align-items-center">
+        <a class="nav-item nav-link dropdown-toggle text-white"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          -- Usuário --
+        </a>
+        <ul id="elementsUser" class="dropdown-menu text-white fw-light" style="background-color: #e98b10d7;" aria-labelledby="navbarDropdown">
+          {% if caso1 == False %}
+          <li><a id="Login" class="ms-2" href="{% url 'openLogin' %}">Login</a></li>
+          <li><a id="Registrar" class="ms-2" href="{% url 'openUser' %}">Registrar-se</a></li>
+          {% endif %}
+          {% if caso1 == True %}
+          <li><a id="Login" class="ms-2" href="">{{ user.get_username }}</a></li>
+          <li><a id="Registrar" class="ms-2" href="{% url 'openConf' %}">Configurações</a></li>
+          <li><a id="LogOut" class="ms-2" href="{% url 'deslogar' %}">LogOut</a></li>
+          {% endif %}
+        </ul>
+      </li>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-light p-0">
+    <div class="barra1 container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="linha container-fluid navbar-nav me-auto my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 300px;">
+          <li class="nav-item">
+            <a class="nav-item nav-link text-white" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link" id="texto-teste" href="{% url 'openHistory' %}">História</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-item nav-link dropdown-toggle me-1" id="texto-teste"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Fundamentos
+            </a>
+            <ul class="dropdown-menu" style="background-color: #192a50d7;" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 1 %}">Recepção</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 2 %}">Saque</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 3 %}">Levantamento</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 4 %}">Bloqueio</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 5 %}">Ataque</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link" href="{% url 'openRegras' %}" id="texto-teste">Regras</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link" href="{% url 'openCurious' %}" style="width: 120px;" id="texto-teste">Curiosidades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link" href="{% url 'openRefs' %}" id="texto-teste">Referências</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-item nav-link" id="texto-teste" style="width: 180px;" href="{% url 'openChat' %}">Chat da Comunidade</a>
+          </li>
+          <div id="form" class="container-xxl justify-content-end">
+         </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--Fim Barra de Navegação-->
+
+  <div class="container mt-5">
+    <div class="text">
+      <div>
+        <p id="spanRed" class="p text-center fw-bold wow slideInLeft" data-wow-delay="0.2s">HISTÓRIA DO VOLEIBOL</p>
+        <p id="textHistory" class="p text-center fw-light wow slideInLeft" data-wow-delay="0.5s">O voleibol foi criado pelo norte-americano William George Morgan, professor de Educação Física da YMCA (Associação Cristã de Moços) de Holyoke, Massachusetts (EUA), em 1895. Embora o basquetebol, criado alguns anos antes pelo também professor da YMCA James Naismith tenha tido uma grande aceitação, Morgan considerava o esporte extenuante e de grande contato físico. Desta forma, teve a ideia de desenvolver uma modalidade que fosse mais leve e, ao mesmo tempo, estimulante para seus alunos de meia idade, grande parte deles formada por homens de negócio. Morgan teve o tênis como inspiração para a criação do voleibol: redes, quadra e a lógica de passar e repassar a bola de um lado para o outro. Entretanto, desejava que sua modalidade não exigisse tantos materiais e recursos, isto é, que fosse mais prática e democrática que o tênis. Assim, nascia o voleibol, um esporte que podia ser jogado em áreas abertas ou fechadas, com mais ou menos pessoas, e que não necessitasse de materiais específicos (a bola era passada pelas próprias mãos dos jogadores).Os maiores problemas enfrentados por Morgan se concentraram na decisão de qual tipo de bola deveria ser utilizado. A primeira opção era usar a bola de basquete, porém rapidamente o professor viu que a mesma era muito pesada. Posteriormente, tentou usar apenas a câmera do objeto, contudo ficou algo bastante leve para a prática. A questão somente foi resolvida depois que Morgan solicitou à firma A.G. Spalding & Brothers a fabricação de uma bola especialmente adaptada às necessidades do voleibol, algo bastante parecido com a bola que conhecemos hoje em dia. A primeira partida pública de voleibol ocorreu em 1896, durante uma convenção de professores de Educação Física da YMCA, na Universidade de Springfield. Uma curiosidade é que até esta data, William Morgan chamava o esporte de “minonette”. Foi após a primeira demonstração da modalidade que o nome pelo qual conhecemos o esporte foi sugerido pelo professor Alfred Halstead.</p>
+        <p class="p text-center fw-light wow slideInLeft" data-wow-delay="0.5s">Nos anos seguintes, o voleibol já se espalhou por diversas cidades americanas. Posteriormente, graças ao alcance da Associação Cristã de Moços Internacional, o esporte se difundiu por vários países, como Canadá, Cuba, Filipinas, China, Japão e grande parte da Europa. O vôlei se tornou conhecido na América Latina por volta de 1910, quando autoridades peruanas entraram em contato com educadores dos Estados Unidos em busca de aprimoramentos em seus programas de Educação Física
+        </p>
+        <div id="img-bola">
+          <img class="mb-1 wow slideInLeft" data-wow-delay="0.2s" src="{% static 'img/assetsPages/historia-do-voleibol-a-bola.webp' %}" style="width:40%;" alt="Imagem">
+        </div>
+        <p class="text-bola text-center fw-bold wow slideInRight" data-wow-delay="0.4s">Modelo das primeiras bolas utilizadas nos jogos de voleibol ( ainda chamado de Minonette).</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Início Timeline -->
+  <div class="timeline-text">
+    <p id="spanOrange" class="h3 text-center fw-bold wow bounceInDown" data-wow-delay="0.2s">TIMELINE</p>
+  </div>
+  <div class="timeline">
+    <div class="year wow bounceInUp" data-wow-delay="0.1s" data-info="Evento 1">
+      <div class="event-info mt-2" style="background-image: url({% static 'img/assetsPages/volei2.png' %});">
+        <h3 class="text-timeline">Criação do Voleibol</h3>
+        <p class="text-timeline">(Ainda chamado de Minonette) pelo norte-americano William George Morgan, professor de Educação Física da YMCA (Associação Cristã de Moços) de Holyoke, Massachusetts (EUA);</p>
+      </div>
+      1895
+    </div>
+    <div class="year wow bounceInUp" data-wow-delay="0.2s" data-info="Evento 2">
+      <div class="event-info mt-2" style="background-image: url({% static 'img/assetsPages/first.jpg' %});">
+        <h3 class="text-timeline">Primeira partida</h3>
+        <p class="text-timeline"> Primeira partida pública de voleibol durante uma convenção de professores de Educação Física da YMCA, na Universidade de Springfield.Foi após a primeira demonstração da modalidade que o nome pelo qual conhecemos o esporte foi sugerido pelo professor Alfred Halstead.</p>
+      </div>
+      1896
+    </div>
+    <div class="year wow bounceInUp" data-wow-delay="0.3s" data-info="Evento 3">
+      <div class="event-info mt-2" style="background-image: url({% static 'img/assetsPages/latinAmerica.png' %});">
+        <h3 class="text-timeline">América Latina</h3>
+        <p class="text-timeline">O voleibol chega no Peru e consequentemente na América do Sul e Latina.</p>
+      </div>
+      1910
+    </div>
+    <div class="year wow bounceInUp" data-wow-delay="0.4s" data-info="Evento 4">
+      <div class="event-info mt-2" style="background-image: url({% static 'img/assetsPages/Brasil.png' %});">
+        <h3 class="text-timeline" style="z-index: 99;">Brasil!!!</h3>
+        <p class="text-timeline" style="z-index: 99;">O voleibol chegou ao Brasil, sendo jogado pela primeira vez em Pernambuco, no colégio marista de Recife.</p>
+      </div>
+      1916
+    </div>
+    <div class="year wow bounceInUp" data-wow-delay="0.5s" data-info="Evento 1">
+      <div class="event-info mt-2" style="background-image: url({% static 'img/assetsPages/regras.png' %});">
+        <h3 class="text-timeline">Rules</h3>
+        <p class="text-timeline">Foram criadas as regras autênticas do voleibol.<br>Aconteceu o primeiro campeonato nacional de voleibol no Brooklyn, reunindo 27 núcleos de 11 estados norte-americanos diferentes.</p>
+      </div>
+      1922
+    </div>
+    <div class="year wow bounceInUp" data-wow-delay="0.6s" data-info="Evento 2">
+      <div class="event-info mt-2" style="background-image: url({% static 'img/assetsPages/fivb.jpg' %});">
+          <h3 class="text-timeline">A FIVB</h3>
+          <p class="text-timeline">20 de abril de 1947 foi criada em Paris a Federação internacional de voleibol (FIVB).</p>
+      </div>
+        1947
+    </div>
+    <div class="year wow bounceInUp" data-wow-delay="0.7s" data-info="Evento 3">
+      <div class="event-info mt-2" style="background-image: url({% static 'img/assetsPages/cbv.jpg' %});">
+        <h3 class="text-timeline">A CBV</h3>
+        <p class="text-timeline">Criada a Confederação Brasileira de Voleibol (CBV).</p>
+      </div>
+        1954
+    </div>
+    <div class="year wow bounceInUp" data-wow-delay="0.8s" data-info="Evento 4">
+      <div class="event-info mt-2" style="background-image: url({% static 'img/assetsPages/pan_americano.jpg' %});">
+          <h3 class="text-timeline">Pan-Americanos</h3>
+          <p class="text-timeline">Aconteceu a estreia dos jogos Pan-americanos e todos os ingressos esgotaram até antes do início dos jogos..</p>
+      </div>
+      1955
+    </div>
+    <div class="year wow bounceInUp" data-wow-delay="0.9s" data-info="Evento 1">
+      <div class="event-info mt-2" style="background-image: url({% static 'img/assetsPages/olimpic.png' %});">
+          <h3 class="text-timeline">Olimpíadas</h3>
+          <p class="text-timeline">Congresso Olímpico Internacional aceitou o voleibol como esporte olímpico.</p>
+      </div>
+      1962
+    </div>
+    <div class="year wow bounceInUp" data-wow-delay="1s" data-info="Evento 2">
+      <div class="event-info mt-2" style="background-image: url({% static 'img/assetsPages/japan.jpg' %});">
+          <h3 class="text-timeline">Tóquio</h3>
+          <p class="text-timeline">Em Tóquio aconteceu a primeira Olimpíadas de voleibol, com 10 equipes masculinas e 6 femininas.<br>Na década de 60 o voleibol foi apontado como o esporte mais popular em 25 países.</p>
+      </div>
+      1964
+    </div>
+    <div class="year wow bounceInUp" data-wow-delay="1.1s" data-info="Evento 3">
+      <div class="event-info mt-2" style="background-image: url({% static 'img/assetsPages/world.png' %});">
+          <h3 class="text-timeline">Mundial</h3>
+          <p class="text-timeline">1984 nos Estados Unidos, em Los Angeles aconteceu os Jogos Olímpicos de verão onde o Brasil levou medalha de prata para casa.<br>1990 foi disputada a primeira Liga Mundial de Voleibol em Osaka.</p>
+      </div>
+      1990
+    </div>
+    <div class="year wow bounceInUp" data-wow-delay="1.2s" data-info="Evento 4">
+      <div class="event-info mt-2" style="background-image: url({% static 'img/assetsPages/100anos.jpg' %});">
+          <h3 class="text-timeline">100 Anos</h3>
+          <p class="text-timeline">1995 o voleibol completa 100 anos.<br>1996 na Atlanta, o voleibol de praia foi introduzido como modalidade olímpica.</p>
+      </div>
+      1995
+    </div>
+  </div>
+  <!-- Fim Timeline -->
+  <!-- Início do Brasil no Volei -->
+
+  <div class="container mt-5 mb-3">
+    <div class="text">
+      <div>
+        <p id="spanOrange" class="p text-center mt-5 fw-bold wow bounceInDown" data-wow-delay="0.2s" style="font-size:30px;">BRASIL NO VOLEI</p>
+        <p id="textHistory" class="p text-center fw-light wow slideInRight" data-wow-delay="0.2s">O voleibol chegou a terras brasileiras entre 1910 e 1917. Oficialmente, a primeira competição do esporte no país foi realizada em Recife (PE). O voleibol participou do seu primeiro campeonato mundial realizado em 1949, na cidade de Praga, na Checoslováquia, vindo a aparecer pela primeira vez em uma olimpíada no ano de 1964, em Tóquio.  Em 1954 foi fundada a Confederação Brasileira de Voleibol (CBV) com o objetivo de difundir e desenvolver o voleibol no país.
+        Ao longo dos anos, a CBV transformou o voleibol do país em uma máquina de conquistar títulos nas quadras e um referência de gestão fora delas. Denis Rupet Hathaway, o primeiro presidente da CBV, deu início ao sucesso da organização, que se tornou uma das federações de voleibol mais bem sucedidas do mundo. Um marco importante para o voleibol brasileiro foi a criação do Centro de Desenvolvimento de Voleibol em Saquarema, que proporcionou infraestrutura de alta qualidade para as seleções nacionais.
+        O voleibol brasileiro teve um histórico impressionante de vitórias em competições internacionais, com conquistas como o Campeonato Mundial, a Liga Mundial e o Grand Prix. Tanto as seleções masculinas quanto femininas tiveram desempenho excepcional, incluindo várias medalhas de ouro e prata. Além disso, acumulou cinco títulos olímpicos, com a seleção masculina em 1992, 2004 e 2016, e a seleção feminina em 2008 e 2012, além de três medalhas de ouro no voleibol de praia.
+        </p>
+
+        <p id="spanRed" class="p text-center fw-bold wow slideInRight" data-wow-delay="0.2s">CONFIRA ALGUNS JOGADORES APOSTADOS COMO ÍCONES DO VOLEIBOL BRASILEIRO</p>
+
+        <div id="img-bola">
+          <img class="mb-1 wow slideInRight" data-wow-delay="0.2s" src="{% static 'img/assetsPages/sergio.jpg' %}" style="width:40%;" alt="Imagem">
+        </div>
+        <a href="https://jogohoje.com/outros-esportes/serginho-escadinha/" id="text-players" class="p fw-bold wow slideInRight" data-wow-delay="0.2s">Fonte: Serginho Escadinha: Um Dos Maiores Do Vôlei Brasileiro (jogohoje.com)</a>
+        <p class="p text-center fw-light wow slideInRight" data-wow-delay="0.2s">Sérgio Dutra Santos, ou melhor, Serginho é um nome que não poderia faltar nessa lista de destaques. É o único jogador entre os homens que disputou 4 finais olímpicas consecutivas. Como líbero, ele desempenhou um papel crucial na defesa do time brasileiro. Ele é conhecido por sua incrível capacidade de defesa e recebeu o prêmio de Melhor Jogador (MVP) nos Jogos Olímpicos de 2016, um feito raro para um jogador na posição de líbero.
+        </p>
+
+        <div id="img-bola">
+          <img class="mb-1 wow slideInRight" data-wow-delay="0.2s" src="{% static 'img/assetsPages/fofao.png' %}" style="width:40%;" alt="Imagem">
+        </div>
+        <a href="https://ge.globo.com/volei/noticia/2023/02/17/fofao-e-anunciada-como-tecnica-da-selecao-feminina-sub-17.ghtml" id="text-players" class=" p fw-bold wow slideInRight" data-wow-delay="0.2s">Fonte:  Fofão é anunciada como técnica da seleção feminina sub-17 | vôlei | ge (globo.com)</a>
+        <p class="p text-center fw-light wow slideInRight" data-wow-delay="0.2s">Já Bernard Rajzman, um dos principais nomes do voleibol brasileiro nos anos 80, ajudou a levar a equipe brasileira ao primeiro pódio olímpico, com a medalha de prata nos Jogos Olímpicos de 1984. Bernard também é conhecido por ter sido o criador do famoso saque jornada nas estrelas.
+        </p>
+
+        <div id="img-bola">
+          <img class="mb-1 wow slideInRight" data-wow-delay="0.2s" src="{% static 'img/assetsPages/bernard.png' %}" style="width:40%;" alt="Imagem">
+        </div>
+        <a href="https://terceirotempo.uol.com.br/que-fim-levou/bernard-rajzman-933" id="text-players" class="p fw-bold wow slideInRight" data-wow-delay="0.2s">Fonte: Bernard Rajzman - Que fim levou? - Terceiro Tempo (uol.com.br)</a>
+        <p class="p text-center fw-light wow slideInRight" data-wow-delay="0.2s">Fofão, cujo nome real é Hélia Rogério de Souza Pinto, é outra atleta que fez história no voleibol feminino. Sua incrível habilidade como levantadora e sua liderança em quadra contribuíram para os sucessos da seleção brasileira, incluindo a conquista do ouro olímpico em 2008.
+        </p>
+
+        <div id="img-bola">
+          <img class="mb-1 wow slideInRight" data-wow-delay="0.2s" src="{% static 'img/assetsPages/giba.jpeg' %}" style="width:40%;" alt="Imagem">
+        </div>
+        <a href="https://esportes.r7.com/olimpiadas/idolo-do-volei-giba-anuncia-aposentadoria-23082021" id="text-players" class="p fw-bold wow slideInRight" data-wow-delay="0.2s">Fonte: Ídolo do vôlei, Giba anuncia aposentadoria - Esportes - R7 Olimpíadas</a>
+        <p class="p text-center fw-light wow slideInRight" data-wow-delay="0.2s">Giba, cujo nome real é Gilberto Godoy Filho, é amplamente reconhecido por suas impressionantes realizações na quadra e pela sua contribuição inestimável ao esporte. Seu legado para o vôlei brasileiro e mundial é indiscutível, com uma carreira repleta de títulos importantes e atuações memoráveis.  Durante seus 20 anos de carreira, Giba conquistou inúmeros troféus, incluindo três medalhas de ouro em Jogos Olímpicos e três títulos mundiais. Ele é frequentemente elogiado por seu desempenho atlético, habilidades técnicas e liderança dentro e fora da quadra.
+        </p>
+
+        <div id="img-bola">
+          <img class="mb-1 wow slideInRight" data-wow-delay="0.2s" src="{% static 'img/assetsPages/josé.jpg' %}" style="width:40%;" alt="Imagem">
+        </div>
+        <a href="https://vivadigitalsa.com.br/jose-roberto-guimaraes-biografia-titulos-e-historia-no-volei/" id="text-players" class="p fw-bold wow slideInRight" data-wow-delay="0.2s">Fonte: José Roberto Guimarães: biografia, títulos e história no vôlei - Viva Digital (vivadigitalsa.com.br)</a>
+        <p class="p text-center fw-light wow slideInRight" data-wow-delay="0.2s"''>José Roberto Guimarães, embora seja mais conhecido como técnico das seleções feminina e masculina de vôlei, também teve uma carreira de jogador bem-sucedida. Como técnico, ele levou ambas as equipes a vitórias olímpicas, um feito notável que realça sua importância para o voleibol brasileiro.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- Fim do Brasil no Volei -->
+
+  <footer class="container-fluid">
+    <div class="justify-content-center text-white fw-light d-flex">
+        <div class="text-center">
+          <div class="text-center d-flex justify-content-center">
+            <div class="me-3 mt-2"><a id="contato" href="https://github.com/IceyPiter"><i data-feather="github"></i> GitHub</a></div>
+            <div class="me-3 mt-2"><a id="contato" href="https://twitter.com/MoraesMichalski?t=QQjbt5rUnsjlaBzuRChZ4g&s=09"><i data-feather="twitter"></i> Twitter</a></div>
+            <div class="me-3 mt-2"><a id="contato" href="https://instagram.com/dpedromichalski?utm_source=qr&iqshid=MzNINGNkZWQ4Mg%3D%3D"><i data-feather="instagram"></i> Instagram</a></div>
+          </div>
+          <h5 style="font-size:13px; font-style: oblique; font-weight: lighter; margin-top: 10px;">Developed By Piter &#169 2023</h5>
+        </div>
+        <h3 class="traco fw-bold me-3">-</h3>
+        <div class="text-center">
+          <div class="text-center d-flex justify-content-center">
+            <div class="me-3 mt-2"><a id="contato" href="https://github.com/Linkadah"><i data-feather="github"></i> GitHub</a></div>
+            <div id="contato" class="me-3 mt-2"><a id="contato" href="https://www.twitch.tv/linkadah_?sr=a"><i data-feather="twitch"></i> Twitch</a></div>
+            <div class="me-3 mt-2"><a id="contato" href="https://instagram.com/_krlachristinacomh?igshid=MzRlODBiNWFlZA=="><i data-feather="instagram"></i> Instagram</a></div>
+          </div>
+          <h5 style="font-size:13px; font-style: oblique; font-weight: lighter; margin-top: 10px;">Developed By Carla &#169 2023</h5>
+        </div>
+    </div>
+  </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script>feather.replace()</script>
+<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/wow.min.js' %}"></script><script>new WOW().init();</script>
+</body>
+</html>

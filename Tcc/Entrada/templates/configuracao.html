@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <meta name="description" content="Site sobre Voleibol - TCC, Informática">
+    <link rel="icon" href="{% static 'img/Volleyball-logo.png' %}">
+    <title>Configurações</title>
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/css-login.css' %}">
+</head>
+
+<body class="w-100" style="background-image: url({% static 'img/bola2.jpg' %}); background-size: cover; background-repeat: no-repeat;">
+    <!-- CONTAINER DO LOGIN -->
+        {% if caso == 1 %}
+        <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+          <div class="home h4 fixed-top mt-3 ms-4 text-white fw-light">
+              <a href="{% url 'homeLogado' %}">Home</a>  
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4">
+              <form id="login-box" class="p-3 text-light" action="{% url 'recuperarSenha' %}" method="post">
+                  {% csrf_token %}
+                  <h1 id="texts" class="pb-3 text-center">Redefinir Senha</h1>
+                  <div class="mb-3">
+                      <label for="" class="form-label">Username ou Email</label>
+                      <input type="text" name="nome" class="form-control" placeholder="Username ou Email" required>
+                  </div>
+                  <span class="h6 fw-light" style="color:rgb(255, 133, 18);">{{erro}}</span>
+                  <div class="text-center my-3">
+                      <button type="submit" class="btn">Entrar</button>
+                  </div>
+              </form>
+          </div>
+        </div>
+        {% endif %}
+        {% if caso == 2 %}
+        <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+          <div class="home h4 fixed-top mt-3 ms-4 text-white fw-light">
+              <a href="{% url 'home' %}">Home</a>  
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4">
+              <form id="login-box" class="p-3 text-light" action="{% url 'conferirCode' nome %}" method="post">
+                  {% csrf_token %}
+                  <h1 id="texts" class="pb-3 text-center">Insira o Código do Email</h1>
+                  <div class="mb-3">
+                      <label for="" class="form-label">Código</label>
+                      <input type="password" name="code" class="form-control" placeholder="Código Aqui" required>
+                  </div>
+                  <span class="h6 fw-light" style="color:rgb(255, 133, 18);">{{erro}}</span>
+                  <div class="text-center my-3">
+                      <button type="submit" class="btn">Entrar</button>
+                  </div>
+              </form>
+          </div>
+        </div>
+        <!-- Fim Modal 2 -->
+        {% endif %}
+        {% if caso == 3 %}
+        <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+          <div class="home h4 fixed-top mt-3 ms-4 text-white fw-light">
+              <a href="{% url 'home' %}">Home</a>  
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4">
+              <form id="login-box" class="p-3 text-light" action="{% url 'definirSenha' nome %}" method="post">
+                  {% csrf_token %}
+                  <h1 id="texts" class="pb-3 text-center">Nova Senha</h1>
+                  <div class="mb-3">
+                      <label for="" class="form-label">Nova Senha</label>
+                      <input type="password" name="code" class="form-control" placeholder="Senha Aqui" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Confirmar Senha</label>
+                    <input type="password" name="code2" class="form-control" placeholder="Senha Aqui" required>
+                </div>
+                  <span class="h6 fw-light" style="color:rgb(255, 133, 18);">{{erro}}</span>
+                  <div class="text-center my-3">
+                      <button type="submit" class="btn">Entrar</button>
+                  </div>
+              </form>
+          </div>
+        </div>
+        <!-- Fim Modal 2 -->
+        {% endif %}
+        {% if caso == 4 %}
+        <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+          <div class="home h4 fixed-top mt-3 ms-4 text-white fw-light">
+              <a href="{% url 'home' %}">Home</a>  
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4">
+              <form id="login-box" class="p-3 text-light" action="{% url 'home' %}" method="post">
+                  {% csrf_token %}
+                  <h1 id="texts" class="pb-3 text-center">Senha Redefinida</h1>
+                  <div class="text-center my-3">
+                      <button type="submit" class="btn">Home</button>
+                  </div>
+              </form>
+          </div>
+        </div>
+        <!-- Fim Modal 2 -->
+        {% endif %}
+        {% if caso == 5 %}
+        <div class="home h4 fixed-top mt-3 ms-4 text-white fw-light">
+            <a href="{% url 'homeLogado' %}">Home</a>
+        </div>
+        <div class="px-4 py-3 my-1 text-center mt-5">
+            <img class="d-block mx-auto mb-4" src="{% static 'img/Volleyball-logo.png' %}" alt="abc" width="100" height="100">
+            <h1 class="display-5 fw-bold" id="spanOrange">CONFIGURAÇÕES</h1>
+            
+            <div class="col-lg-6 mx-auto">
+              <p class="lead mb-4 fw-bold text-white"></p>
+              <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <button type="button" onclick="toggleForm('form1')" class="btn btn-secondary btn-lg px-4 gap-3">Mudar Nome</button>
+                <button type="button" onclick="toggleForm('form2')" class="btn btn-secondary btn-lg px-4 gap-3">Mudar Senha</button>
+                <button type="button" onclick="toggleForm('form3')" class="btn btn-secondary btn-lg px-4 gap-3">Excluir Conta</button>
+              </div>
+            </div>
+            <span class="h6 fw-bold text-white">{{erro}}</span>
+        </div>
+        <div id="form1" class="form-container">
+            <form id="login-box" class="p-3 text-light" action="{% url 'mudarNome' %}" method="post">
+                {% csrf_token %}
+                <h1 id="texts" class="pb-3 text-center">Qual será o novo nome?</h1>
+                <div class="mb-3">
+                    <label for="" class="form-label">Novo Nome</label>
+                    <input type="text" name="newName" class="form-control" placeholder="Nome Aqui" required>
+                </div>
+                <div class="text-center my-3">
+                    <button type="submit" class="btn">Mudar</button>
+                    <button type="button" onclick="esconderBotao('form1')" class="btn">Fechar</button>
+                </div>
+            </form>
+        </div>
+        
+        <div id="form2" class="form-container">
+            <form id="login-box" class="p-3 text-light" action="{% url 'definirSenhaConf' %}" method="post">
+                {% csrf_token %}
+                <h1 id="texts" class="pb-3 text-center">Nova Senha</h1>
+                <div class="mb-3">
+                    <label for="" class="form-label">Nova Senha</label>
+                    <input type="password" name="code" class="form-control" placeholder="Senha Aqui" required>
+                </div>
+                <div class="mb-3">
+                  <label for="" class="form-label">Confirmar Senha</label>
+                  <input type="password" name="code2" class="form-control" placeholder="Senha Aqui" required>
+              </div>
+                <span class="h6 fw-light" style="color:rgb(255, 133, 18);">{{erro}}</span>
+                <div class="text-center my-3">
+                    <button type="submit" class="btn">Entrar</button>
+                    <button type="button" onclick="esconderBotao('form2')" class="btn">Fechar</button>
+                </div>
+            </form>
+        </div>
+        
+        <div id="form3" class="form-container">
+            <form id="login-box" class="p-3 text-light" action="{% url 'excluirConta' %}" method="post">
+                {% csrf_token %}
+                <h1 id="texts" class="pb-3 text-center">Tem Certeza que deseja excluir a conta ?</h1>
+                <div class="text-center my-3">
+                    <button type="submit" class="btn">SIM</button>
+                    <button type="button" onclick="esconderBotao('form3')" class="btn">NÃO</button>
+                </div>
+            </form>
+        </div>
+        {% endif %}
+
+    <!-- FOOTER -->
+    <footer class="text-dark fixed-bottom text-center text-light d-flex align-items-center justify-content-center" style="font-size: 15px; height: 8vh;">
+        Voleibol &copy2023 <i class="bi bi-github"></i>
+    </footer>
+
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script><script>new WOW().init();</script>
+</body>
+</html>
