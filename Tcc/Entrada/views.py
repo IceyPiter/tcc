@@ -80,7 +80,7 @@ def cadastrar_user(request):
     emailForm = request.POST.get("mail")
 
     if nomeForm:
-        if len(nomeForm) > 1:
+        if len(nomeForm) > 1 and len(nomeForm) <= 20:
             if emailForm:
                 if "@gmail.com" in emailForm or "@yahoo.com" in emailForm:
                     if senhaForm:
@@ -107,7 +107,7 @@ def cadastrar_user(request):
                 erro = "!!  Preenha Todos os campos  !!"
                 return render(request, 'cadastrar_user.html', {"erro": erro}) 
         else:
-            erro = "!!  Usuário deve conter mais de 1 letra  !!"
+            erro = "!!  Usuário deve conter mais de 1 letra e até 20 caracteres  !!"
             return render(request, 'cadastrar_user.html', {"erro": erro})
     else:
         erro = "!!  Preenha Todos os campos  !!"
